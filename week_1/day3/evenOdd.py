@@ -1,7 +1,12 @@
-x = int(input("Please provide a number"))
+x = input("Please provide a number: ")
+xLength = len(x)
 
-if(x % 2 == 0):
+while(xLength < 1):
+    x = input("Please provide a number: ")
+    xLength = len(x)
+
+if(int(x) % 2 == 0):
     print("This number is even!")
 
-if(x % 2 != 0):
+else:
     print("This number is odd!")
