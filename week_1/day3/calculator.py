@@ -1,3 +1,16 @@
+#functions
+def add(number1, number2):
+    return number1 + number2
+
+def subtract(number1, number2):
+    return number1 - number2
+
+def multiply(number1, number2):
+    return number1 * number2
+
+def divide(number1, number2):
+    return number1 // number2
+
 #first number
 firstNumber = input("Please enter a number: ")
 lengthFirstNumber = len(firstNumber)
@@ -24,17 +37,13 @@ while(lengthSecondNumber < 1):
 
 #equation and output
 if(operand == "*"):
-    total = (int(firstNumber) * int(secondNumber))
-    print("The result is %s." % (total))
+    print(multiply(int(firstNumber), int(secondNumber)))
 
 if(operand == "/"):
-    total = (int(firstNumber) / int(secondNumber))
-    print("The result is %s." % (total))
+    print(divide(int(firstNumber), int(secondNumber)))
 
 if(operand == "+"):
-    total = (int(firstNumber) + int(secondNumber))
-    print("The result is %s." % (total))
+    print(add(int(firstNumber), int(secondNumber)))
 
 if(operand == "-"):
-    total = (int(firstNumber) - int(secondNumber))
-    print("The result is %s." % (total))
+    print(subtract(int(firstNumber), int(secondNumber)))
