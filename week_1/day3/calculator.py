@@ -2,7 +2,7 @@
 numbers = []
 
 #first number
-firstNumber = input("Please enter a number: ")
+firstNumber = input("Please enter a number: \n")
 lengthFirstNumber = len(firstNumber)
 numbers.append(firstNumber)
 
@@ -10,12 +10,12 @@ if(firstNumber == "q"):
     exit()
 
 while(lengthFirstNumber < 1):
-    firstNumber = input("Please enter a number: ")
+    firstNumber = input("Please enter a number: \n")
     lengthFirstNumber = len(firstNumber)
     numbers.append(firstNumber)
 
 #operand
-operand = input("Please enter a +, -, * or /: ")
+operand = input("Please enter a +, -, * or /: \n")
 lengthOperand = len(operand)
 numbers.append(operand)
 
@@ -23,12 +23,12 @@ if(operand == "q"):
     exit()
 
 while(lengthOperand < 1):
-    operand = input("Please enter a +, -, * or /: ")
+    operand = input("Please enter a +, -, * or /: \n")
     lengthOperand = len(operand)
     numbers.append(operand)
 
 #second number
-secondNumber = input("Please enter a second number: ")
+secondNumber = input("Please enter a second number: \n")
 lengthSecondNumber = len(secondNumber)
 numbers.append(secondNumber)
 
@@ -36,7 +36,7 @@ if(secondNumber == "q"):
     exit()
 
 while(lengthSecondNumber < 1):
-    secondNumber = input("Please enter a second number: ")
+    secondNumber = input("Please enter a second number: \n")
     lengthSecondNumber = len(secondNumber)
     numbers.append(secondNumber)
 
@@ -88,5 +88,5 @@ if(numbers[1] == "-"):
 
 while(result != "="):
     result = input("Press = for the result!")
-    if(result == "="):
+if(result == "="):
         print("Your total is %s." % total)
