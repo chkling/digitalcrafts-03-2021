@@ -41,7 +41,9 @@ def removeTask():
 
 # View to do list
 def viewTasks():
-    print(toDo)
+    for task in toDo:
+        print(task)
+        # print(toDo[task] + " - " + toDo[title] + " - " + toDo[priority])
     option = input("Go back to main menu? (y for yes or n to exit the program.)\n")
     if(option == "y"):
         mainMenu()
