@@ -19,3 +19,6 @@ demonSpawns = pets[-2:-1]
 # print(rabbit)
 # print(favoriteAnimals)
 print(demonSpawns)
+
+pets.append("kitty")
+print(pets)
