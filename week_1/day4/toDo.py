@@ -33,7 +33,10 @@ def addTask():
 
 # Remove task function
 def removeTask():
-    print(toDo)
+    count = 1
+    for task in toDo:
+        print("%d. %s = %s " % (count, task["title"], task["priority"]))
+        count += 1
     taskToDelete = int(input("Which task should be removed?\n"))
     # toDo.pop(taskToDelete - 1)
     taskToDeleteIndex = taskToDelete - 1
@@ -50,8 +53,10 @@ def removeTask():
 
 # View to do list
 def viewTasks():
+    count = 1
     for task in toDo:
-        print(task)
+        print("%d. %s = %s " % (count, task["title"], task["priority"]))
+        count += 1
         # print(toDo[task] + " - " + toDo[title] + " - " + toDo[priority])
     option = input("Go back to main menu? (y for yes or n to exit the program.)\n")
     if(option == "y"):
