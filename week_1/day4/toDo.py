@@ -4,20 +4,25 @@ choice = ""
 # Welcome function
 def welcomeMessage():
     message = """
-    Welcome to your TO DO list!\n
-    Press 1 to add task \n
-    Press 2 to delete task\n
-    Press 3 to view all tasks\n
+    Welcome to your TO DO list!
+    Press 1 to add task 
+    Press 2 to delete task
+    Press 3 to view all tasks
     Press q to quit\n
     """
     return print(message)
 
 # Add task function
 def addTask():
-    title = input("What should be added?\n")
-    priority = input("Is this of high or low importance?\n")
-    toDo.append({title: priority})
+    toDoDictionary = {}
+    taskToAdd = input("What should be added?\n")
+    priorityOfTask = input("Is this of high, medium or low importance?\n")
+
+    toDoDictionary["title"] = taskToAdd
+    toDoDictionary["priority"] = priorityOfTask
+    toDo.append(toDoDictionary)
     print("Added item to list.\n")
+
     option = input("Add another task? (y for yes or n for no)\n")
     if(option == "y"):
         addTask()
@@ -29,9 +34,13 @@ def addTask():
 # Remove task function
 def removeTask():
     print(toDo)
-    index = input("Which task should be removed?\n")
-    del toDo[index]
-    option = input("Remove another task? (y for yes or n for no)\n")
+    taskToDelete = int(input("Which task should be removed?\n"))
+    # toDo.pop(taskToDelete - 1)
+    taskToDeleteIndex = taskToDelete - 1
+    gettingDeleted = toDo[taskToDeleteIndex]
+    del toDo[taskToDeleteIndex]
+
+    option = input("We have removed %s. Remove another task? (y for yes or n for no)\n" % gettingDeleted)
     if(option == "y"):
         removeTask()
     elif(option == "n"):
@@ -60,12 +69,15 @@ def mainMenu():
         selection = input("What would you like to do? \n")
         if(selection == "1"):
             addTask()
-        if(selection == "2"):
+        elif(selection == "2"):
             removeTask()
-        if(selection == "3"):
+        elif(selection == "3"):
             viewTasks()
-        if(selection == "q"):
+        elif(selection == "q"):
             exit()
+        else:
+            welcomeMessage()
+            selection = input("What would you like to do? \n")
 
 mainMenu()
 
