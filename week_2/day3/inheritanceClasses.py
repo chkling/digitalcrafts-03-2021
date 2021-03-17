@@ -20,8 +20,18 @@ class Currency:
         # return quantityTotal
 
 class CryptoCurrency(Currency):
+# This is how to inherit from the parent class and redefine
+    def __init__(self, name, nation, price, quantity, volatility):
+        # super().__init__(name, nation, price, quantity)
+        self.name = name
+        self.nation = nation
+        self.price = price 
+        self.quantity = quantity
+        self.volatility = volatility
+
     def go_to_the_moon(self):
         self.price = self.price * 1000
+        print(self.price)
 
     def printCurrency(self):
         print(f"""
@@ -30,14 +40,15 @@ class CryptoCurrency(Currency):
             NAME: {self.name}\n
             PRICE: {self.price}\n
             QUANTITY: {self.quantity}\n
+            VOLATILITY: {self.volatility}\n
             """)
 
 class ScamCurrency(CryptoCurrency):
     def sendPersonalData(self):
         print("You got scammed!")
 
-doge = CryptoCurrency("DogeCoin", "Doge Nation", 5, 10000)
-xvg = ScamCurrency("XVG", "Super Secure Money", 1, 10)
+doge = CryptoCurrency("DogeCoin", "Doge Nation", 5, 10000, "very")
+xvg = ScamCurrency("XVG", "Super Secure Money", 1, 10, "definitely bad")
 
 
 yen = Currency("Yen", "Japan", 200, 10)
@@ -55,5 +66,5 @@ swedishKrona = Currency("Krona", "Sweden", 20, 10)
 xvg.printCurrency()
 xvg.go_to_the_moon()
 xvg.printCurrency()
+doge.printCurrency()
 xvg.sendPersonalData()
-usDollar.printCurrency()
