@@ -12,7 +12,7 @@ class Building:
         self.sqft = sqft
 
     def buildingMessage(self):
-        message = print(f"Building is {self.height} feet tall, has a capacity of {self.capacity} people, and is {self.sqft} square feet.")
+        message = print(f"This building is {self.height} feet tall, has a capacity of {self.capacity} people, and is {self.sqft} square feet.")
         return message
 
 
