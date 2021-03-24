@@ -1,0 +1,27 @@
+.basic-flex {
+	display: flex;
+}
+
+.basic-flex-direction {
+	display: flex;
+	flex-direction: column;
+	/* values: row, row-reverse, column, column reverse */
+}
+
+.basic-flex-wrap {
+	display: flex;
+	flex-wrap: wrap;
+	/* values: nowrap, wrap, wrap reverse */
+}
+
+.basic-flex-justify-content {
+	display: flex;
+	justify-content: center;
+	/* flex-start, flex-end, space-around space-between */
+}
+
+.basic-flex-align-items {
+	display: flex;
+	align-items: center;
+	/* values: baseline, center */
+}
