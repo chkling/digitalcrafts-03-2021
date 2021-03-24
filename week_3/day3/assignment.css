@@ -1,0 +1,11 @@
+.soda_picture {
+	position: absolute;
+}
+
+.soda_text {
+	position: relative;
+	left: 100px;
+	top: 100px;
+	background-color: #ffffffa8;
+	font-size: 30px;
+}
