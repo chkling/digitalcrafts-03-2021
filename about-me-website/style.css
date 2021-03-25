@@ -30,14 +30,20 @@ body {
 
 /* Main page  */
 .container {
-	display: flex;
-	flex-direction: row;
-	justify-content: center;
-	margin: 20px;
+	display: grid;
+	height: 100vh;
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: 1fr 1fr 1fr;
+	grid-template-areas:
+		"main-picture h1"
+		"main-picture p-1"
+		"main-picture p-2";
 }
 
 .main-picture {
+	grid-area: main-picture;
 	padding: 20px;
+	text-align: center;
 }
 
 .calvin {
@@ -50,10 +56,19 @@ body {
 
 .main-intro h1 {
 	text-align: center;
+	grid-area: h1;
 }
 
 .main-intro p {
 	margin-top: 30px;
+}
+
+.p-1 {
+	grid-area: p-1;
+}
+
+.p-2 {
+	grid-area: p-2;
 }
 
 /* Contact page */
@@ -61,47 +76,85 @@ body {
 #contact-page {
 	display: flex;
 	justify-content: center;
-	margin-top: 80px;
+	margin-top: 50px;
 }
 #submit-form {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	margin: 20px;
-	padding: 20px;
 	border: 3px rgba(0, 0, 0, 0.336) solid;
 	width: 400px;
 	border-radius: 10px;
+	float: left;
 	background-color: rgba(78, 137, 214, 0.336);
+	display: grid;
+	height: 500px;
+	padding: 30px;
+	grid-template-columns: 1fr;
+	grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+	grid-template-areas:
+		"h1"
+		"name-section"
+		"date-section"
+		"email-section"
+		"text-section"
+		"button";
 }
 
 #submit-form h1 {
-	display: flex;
-	justify-content: center;
+	grid-area: h1;
+	text-align: center;
+	margin-bottom: 40px;
+}
+
+.name-section {
+	grid-area: name-section;
+	width: 100%;
 	margin-bottom: 20px;
 }
 
-.sub-1 {
-	float: left;
-	padding: 10px;
+.name-section input {
+	outline: none;
+	width: 280px;
+	height: 26px;
+}
+
+.date-section {
+	grid-area: date-section;
+	outline: none;
+	margin-bottom: 20px;
+}
+
+.date-section input {
+	outline: none;
+	width: 288px;
+	height: 26px;
+}
+
+.email-section {
+	grid-area: email-section;
+	margin-bottom: 20px;
+}
+
+.email-section input {
+	outline: none;
+	width: 220px;
+	height: 26px;
+}
+
+.text-section {
+	grid-area: text-section;
+}
+
+.text-section textarea {
 	outline: none;
 }
 
-.sub-2 {
-	float: right;
-	padding: 5px;
-	outline: none;
-	width: 200px;
-}
-
-#submit-form button {
-	cursor: pointer;
-	width: 70px;
-	height: 30px;
-	margin: 10px;
+.button-section {
+	text-align: center;
 }
 
 .button {
-	display: flex;
-	justify-content: center;
+	grid-area: button;
+	cursor: pointer;
+	width: 70px;
+	height: 40px;
+	margin: 10px;
 }
