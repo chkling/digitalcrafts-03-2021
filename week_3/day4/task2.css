@@ -1,0 +1,42 @@
+body {
+	background-color: #f4f4f4;
+}
+/* Task 2: Create grid container that has 2 rows x 5 columns, make each item 50px x 40px. Make a background color for each item of your choice  */
+
+#main-container {
+	display: grid;
+	height: 100vh;
+	grid-template-columns: 50px 50px 50px 50px 50px;
+	grid-template-rows: 40px 40px;
+	font-size: 10px;
+}
+.section1 {
+	background-color: rosybrown;
+}
+.section2 {
+	background-color: royalblue;
+}
+.section3 {
+	background-color: seashell;
+}
+.section4 {
+	background-color: thistle;
+}
+.section5 {
+	background-color: wheat;
+}
+.section6 {
+	background-color: palegreen;
+}
+.section7 {
+	background-color: goldenrod;
+}
+.section8 {
+	background-color: hotpink;
+}
+.section9 {
+	background-color: khaki;
+}
+.section10 {
+	background-color: lightsalmon;
+}

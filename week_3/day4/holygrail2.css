@@ -1,0 +1,43 @@
+/* The Holy Grail layout is totes overused.  Now, lets create a slightly different version of it.  Your sidebar will take up the entire 1st column of every row, and your nav will now take 1 column less.  Also your content usually is more verbose, so lets add another content square that is twice the size of the original content square. */
+/* Calvin said he likes ads.  You know what, _lets add an AD box_ to your layout.  It will be the right most element.  YOu might have to increase your grid template columns number (example: going from 4 columns to 5 columns) */
+#main-container {
+	display: grid;
+	height: 100vh;
+	grid-template-columns: 20% 60% 20%;
+	grid-template-rows: 10% 20% 20% 20% 10%;
+	grid-template-areas:
+		"sidebar header ad"
+		"sidebar content1 ad"
+		"sidebar content2 ad"
+		"sidebar content2 ad"
+		"sidebar footer ad";
+}
+
+header {
+	grid-area: header;
+	background-color: lightsalmon;
+}
+
+#sidebar {
+	grid-area: sidebar;
+	background-color: lightseagreen;
+}
+
+#content1 {
+	grid-area: content1;
+	background-color: lightskyblue;
+}
+#content2 {
+	grid-area: content2;
+	background-color: lightcoral;
+}
+
+#ad {
+	grid-area: ad;
+	background-color: rgba(0, 255, 0, 0.438);
+}
+
+footer {
+	grid-area: footer;
+	background-color: mediumpurple;
+}

@@ -1,0 +1,35 @@
+/* <!-- Create the Holy Grail layout.  This is often referred to as the layout that is followed by many websites 
+It consist of a header that spans the entire page
+a side bar that takes up one side (your choice) and content that is on the opposite side of the sidebar
+This is then followed with a footer that takes up the entire page width as well. --> */
+
+#main-container {
+	display: grid;
+	height: 100vh;
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: 10% 80% 10%;
+	grid-template-areas:
+		"header header"
+		"sidebar content1"
+		"footer footer";
+}
+
+header {
+	grid-area: header;
+	background-color: lightsalmon;
+}
+
+#sidebar {
+	grid-area: sidebar;
+	background-color: lightseagreen;
+}
+
+#content1 {
+	grid-area: content1;
+	background-color: lightskyblue;
+}
+
+footer {
+	grid-area: footer;
+	background-color: mediumpurple;
+}

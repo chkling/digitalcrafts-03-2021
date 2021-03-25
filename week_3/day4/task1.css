@@ -1,0 +1,30 @@
+body {
+	background-color: gainsboro;
+}
+
+#main-container {
+	display: grid;
+	height: 100vh;
+	grid-template-columns: 120px 120px 120px;
+	grid-template-rows: 60px 60px;
+	grid-gap: 5px;
+}
+
+.section1 {
+	background-color: rosybrown;
+}
+.section2 {
+	background-color: royalblue;
+}
+.section3 {
+	background-color: seashell;
+}
+.section4 {
+	background-color: thistle;
+}
+.section5 {
+	background-color: wheat;
+}
+.section6 {
+	background-color: palegreen;
+}
