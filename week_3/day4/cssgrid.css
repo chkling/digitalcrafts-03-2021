@@ -1,3 +1,87 @@
 * {
 	font-family: "Metal Mania", cursive;
 }
+
+:root {
+	--primary-color: rgba(69, 25, 190, 0.473);
+}
+
+body {
+	background-color: var(--primary-color);
+}
+
+.main-container {
+	display: grid;
+	height: 100vh;
+	/* template */
+	grid-template-columns: 1fr 1fr 1fr 1fr;
+	grid-template-rows: 1fr 1fr 1fr 1fr;
+	grid-template-areas:
+		"nav nav nav nav"
+		"sidebar main main main"
+		"sidebar content1 content2 content3"
+		"sidebar footer footer footer";
+	grid-gap: 0.4rem;
+	font-weight: 800;
+	text-transform: uppercase;
+	font-size: 20px;
+	color: #004d40;
+	text-align: center;
+}
+
+nav {
+	grid-area: nav;
+	background-color: #dbf5f0;
+}
+
+main {
+	grid-area: main;
+	background-color: #a4e5e0;
+}
+
+footer {
+	grid-area: footer;
+	background-color: #dbf5f0;
+}
+
+#sidebar {
+	grid-area: sidebar;
+	background-color: #0c6170;
+}
+
+#content-div-1 {
+	grid-area: content1;
+	background-color: #37beb0;
+}
+#content-div-2 {
+	grid-area: content2;
+	background-color: #0c6170;
+}
+#content-div-3 {
+	grid-area: content3;
+	background-color: #37beb0;
+}
+
+/* Baby Blue
+/* #DBF5F0 */
+/* Tiffany Blue */
+/* #A4E5E0 */
+/* Blue Green */
+/* #37BEB0 */
+/* Midnight Blue */
+/* #0C6170  */
+
+@media only screen and (max-width: 500px) {
+	.main-container {
+		grid-template-columns: 1fr;
+		grid-template-rows: 0.4fr 0.4fr 2.2fr 1.2fr 1.2fr 1.2fr 1fr;
+		grid-template-areas:
+			"nav"
+			"sidebar"
+			"main"
+			"content1"
+			"content2"
+			"content3"
+			"footer";
+	}
+}
