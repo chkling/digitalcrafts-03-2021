@@ -10,7 +10,42 @@
 			integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
 			crossorigin="anonymous"
 		/>
-		<title>Document</title>
+		<title>Contact Us</title>
 	</head>
-	<body></body>
+	<body>
+		<div class="container pt-5">
+			<div class="row">
+				<div class="col">
+					<h1>Contact Us</h1>
+					<form>
+						<div class="form-group">
+							<label for="name">Name</label>
+							<input
+								type="text"
+								class="form-control"
+								id="name"
+								placeholder="Enter your name:"
+								aria-describedby="nameHelp"
+							/>
+						</div>
+						<div class="form-group">
+							<label for="email">Email</label>
+							<input
+								type="email"
+								class="form-control"
+								id="email"
+								placeholder="Enter your email address:"
+								aria-describedby="emailHelp"
+							/>
+						</div>
+						<div class="form-group">
+							<label for="message">Message</label>
+							<textarea class="form-control" id="message" rows="3"></textarea>
+						</div>
+						<button type="submit" class="btn btn-primary">Contact Us</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</body>
 </html>
