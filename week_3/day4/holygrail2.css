@@ -6,11 +6,12 @@
 	grid-template-columns: 20% 60% 20%;
 	grid-template-rows: 10% 20% 20% 20% 10%;
 	grid-template-areas:
-		"sidebar header ad"
+		"sidebar header header"
 		"sidebar content1 ad"
 		"sidebar content2 ad"
 		"sidebar content2 ad"
-		"sidebar footer ad";
+		"sidebar footer footer";
+	text-align: center;
 }
 
 header {

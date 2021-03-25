@@ -8,6 +8,7 @@ body {
 	grid-template-columns: 120px 120px 120px;
 	grid-template-rows: 60px 60px;
 	grid-gap: 5px;
+	text-align: center;
 }
 
 .section1 {

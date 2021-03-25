@@ -6,12 +6,13 @@ This is then followed with a footer that takes up the entire page width as well.
 #main-container {
 	display: grid;
 	height: 100vh;
-	grid-template-columns: 1fr 1fr;
+	grid-template-columns: 20% 80%;
 	grid-template-rows: 10% 80% 10%;
 	grid-template-areas:
 		"header header"
 		"sidebar content1"
 		"footer footer";
+	text-align: center;
 }
 
 header {
