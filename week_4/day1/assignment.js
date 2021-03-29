@@ -37,7 +37,7 @@ console.log("boolean");
 console.log(newArray.length);
 
 // -Create an object that has the following structure name: "name", age: 20, height: 7.1, metric: "ft"
-newObject = {
+let newObject = {
 	name: "name",
 	age: 20,
 	height: 7.1,
