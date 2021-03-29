@@ -1,94 +1,70 @@
-// Define Variables
-let calvin = "Calvin";
-let number = 3;
-let boolean = true;
-
-// define an array in javascript
-let array = ["cheese", "toast", "bacon"];
-
-// define an object in javascript
-let object = {
-	first: "gold",
-	second: "silver",
-	third: "bronze",
-};
-// define an integer
-let winner = 1;
-
-// define a string
-let cheer = "hooray";
-
-// re-assign the string you defined above to "This is a new string"
-cheer = "This is a new string";
-
-// create a new variable that takes your integer above and multiplies it by 5
-newNumber = winner * 5;
-
-// Create an array that has the following in it ["swag", 123123, true, false, "boolean"]
-let newArray = ["swag", 123123, true, false, "boolean"];
-
-// print out 123123
-console.log(123123);
-// print out false
-console.log(false);
-// print out boolean
-console.log("boolean");
-// bonus: print out the length of the array
-console.log(newArray.length);
-
-// -Create an object that has the following structure name: "name", age: 20, height: 7.1, metric: "ft"
-let newObject = {
-	name: "name",
-	age: 20,
-	height: 7.1,
-	metric: "ft",
-};
-
-// You will create 5 objects with unique names, with unique ages, height.
-let listOfObjects = {
-	newObject1: {
-		name: "calvin",
-		age: 29,
-		height: 6.0,
-		metric: "ft",
+const dantesHashOfInferno = {
+	level1: {
+		name: Limbo,
+		contents: [1, 2, 3, 4, 5, 6, 7, 89, 9, 57, 345, 2, 4123, 4423, 4, 234, 24],
 	},
-	newObject2: {
-		name: "max",
-		age: 27,
-		height: 6.1,
-		metric: "ft",
+	level2: {
+		name: Lust,
+		contents: [12, [56, 56, 56], "swag"],
 	},
-	newObject3: {
-		name: "stefan",
-		age: 31,
-		height: 5.1,
-		metric: "ft",
+	level3: {
+		name: Gluttony,
+		contents: [{ volume: 92, sanctum: "lorem ipsum", tower: ["crown"] }],
 	},
-	newObject4: {
-		name: "robin",
-		age: 59,
-		height: 5.6,
-		metric: "ft",
+	level4: {
+		name: Greed,
+		contents: [{ fourth: "fourth", number4: 4 }],
 	},
-	newObject5: {
-		name: "steve",
-		age: 62,
-		height: 5.1,
-		metric: "ft",
+	level5: {
+		name: Anger,
+		contents: [
+			{
+				reee: 92,
+				reelorum: "latin for ree",
+				reeeeeee: ["angryreeeee", { anger: "you need to calm down" }],
+			},
+		],
+	},
+	level6: {
+		name: Heresy,
+		contents: [],
+	},
+	level7: {
+		name: Violence,
+		contents: [],
+	},
+	level8: {
+		name: Fraud,
+		contents: [],
+	},
+	level9: {
+		name: Treachery,
+		contents: [
+			{
+				volume: 92,
+				sanctum: "lorem ipsum",
+				tower: [
+					{
+						reee: 92,
+						reelorum: "latin for ree",
+						reeeeeee: [
+							"angryreeeee",
+							{
+								anger: "you need to calm down",
+								secret: [
+									{ theSecretIs: "Joe is sorry he gave you this exercise" },
+								],
+							},
+						],
+					},
+				],
+			},
+		],
 	},
 };
-// Print out the first objects name
-console.log(listOfObjects.newObject1.name);
-// Print out the last objects age
-console.log(listOfObjects.newObject5.age);
-// print out the 3rd objects height
-console.log(listOfObjects.newObject3.height + listOfObjects.newObject3.metric);
-// change the 3rd objects height to be 1.2
-listOfObjects.newObject3.height = 1.2;
-console.log(listOfObjects.newObject3.height);
-// change the 3rd objects metric to be "meters"
-listOfObjects.newObject3.metric = "meters";
-console.log(listOfObjects.newObject3.metric);
-// create a new key on the 2nd object called sport. Assign it your favorite sport
-listOfObjects.newObject2.sport = "tennis";
-console.log(listOfObjects.newObject2.sport);
+
+// You wil do the following:
+// Access the contents of level1, print value 234
+// Access the contents of level3, print out the first index of tower
+// Access the contents of level5, print out "you need to calm down" by accessing it's key
+// Access the final layer of the inferno, and print out the secret, specifically the value of theSecretIs
