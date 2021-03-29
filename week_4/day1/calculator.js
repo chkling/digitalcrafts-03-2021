@@ -1,23 +1,23 @@
 function addNumbers(num1, num2) {
-	result = num1 + num2;
+	let result = num1 + num2;
 	return console.log(
 		`You chose addition and the result of your numbers is ${result}.`
 	);
 }
 function subtractNumbers(num1, num2) {
-	result = num1 - num2;
+	let result = num1 - num2;
 	return console.log(
 		`You chose subtraction and the result of your numbers is ${result}.`
 	);
 }
 function multiplyNumbers(num1, num2) {
-	result = num1 * num2;
+	let result = num1 * num2;
 	return console.log(
 		`You chose multiplication and the result of your numbers is ${result}.`
 	);
 }
 function divideNumbers(num1, num2) {
-	result = num1 / num2;
+	let result = num1 / num2;
 	return console.log(
 		`You chose division and the result of your numbers is ${result}.`
 	);
@@ -36,6 +36,7 @@ function calculate(choice, num1, num2) {
 		console.log("Invalid input. Program terminated.");
 	}
 }
+
 calculate("add", 10, 5);
 calculate("subtract", 10, 5);
 calculate("multiply", 10, 5);
