@@ -11,6 +11,7 @@
 			<h1 class="header">Dom Practice 2</h1>
 			<label for="number">Number</label>
 			<input onchange="" class="input" name="number" />
+			<!-- event handler used to fire a function on click -->
 			<button onclick="displayValue()" class="button">Submit</button>
 			<h3>Your number is:</h3>
 			<p class="displayNumber"></p>
@@ -20,7 +21,9 @@
 		function displayValue() {
 			const numberTheyEntered = document.querySelector(".input").value;
 			console.log(typeof numberTheyEntered);
+			//target paragraph element
 			const paragraphTargeted = document.querySelector(".displayNumber");
+			// change innerText of the element to the number entered
 			paragraphTargeted.innerText = numberTheyEntered;
 			// setTimeout(console.log(display), 3000);
 		}
