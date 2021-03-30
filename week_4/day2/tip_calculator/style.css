@@ -10,7 +10,8 @@ body {
 }
 
 #main {
-	display: grid;
+	display: flex;
+	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 }
@@ -27,7 +28,7 @@ body {
 }
 
 .secondary {
-	align-items: center;
+	justify-content: center;
 	width: 300px;
 	border: 2px solid black;
 	border-radius: 5px;
