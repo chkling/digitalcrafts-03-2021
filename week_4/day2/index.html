@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>DOM</title>
+	</head>
+	<body>
+		<h1 id="main-header">DOM 101</h1>
+		<ul id="list">
+			<li class="list-item">User</li>
+			<li class="list-item">About</li>
+			<li class="list-item">Contact</li>
+			<li class="list-item">Chat</li>
+		</ul>
+	</body>
+	<script>
+		const heading = document.getElementById("main-header");
+		console.log(heading);
+
+		const list = document.getElementById("list");
+		console.log(list);
+
+		const listItem = document.getElementsByClassName("list-item");
+		console.log(listItem);
+
+		const liItems = document.getElementsByTagName("li");
+		console.log(liItems);
+		// node list can be iterated over
+		const lastListItem = document.querySelectorAll(".list-item1");
+		console.log(lastListItem);
+		// fat arrow
+		const holder = lastListItem;
+		console.log(holder);
+	</script>
+</html>
