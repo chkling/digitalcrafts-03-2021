@@ -4,34 +4,58 @@
 	box-sizing: border-box;
 }
 
+body {
+	background-color: #f4f4f4;
+	font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
+
 #main {
-	display: flex;
+	display: grid;
 	justify-content: center;
 	align-items: center;
-	margin-top: 10vh;
-	background-color: #f4f4f4;
 }
 
 .formContainer {
-	position: absolute;
 	border: 2px solid black;
-	margin-top: 30vh;
+	margin: 50px;
 	padding: 30px;
 	border-radius: 5px;
 	background-color: skyblue;
+	height: 250px;
+	width: 450px;
+	text-align: center;
 }
 
 .secondary {
-	position: absolute;
+	align-items: center;
+	width: 300px;
 	border: 2px solid black;
-	margin-top: 80vh;
-	padding: 30px;
 	border-radius: 5px;
+	padding: 30px;
+	margin: 50px;
+	background-color: skyblue;
+	text-align: center;
 }
 .tipHistory {
 	list-style: none;
+	align-items: center;
 }
 
-h2 {
-	align-items: center;
+.costOfMeal {
+	padding: 5px;
+	margin: 5px;
+	outline: none;
+}
+
+.tip {
+	padding: 5px;
+	margin: 5px;
+	outline: none;
+}
+
+.button {
+	padding: 5px;
+	margin: 10px;
+	text-align: center;
+	cursor: pointer;
 }
