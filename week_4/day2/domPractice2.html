@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>DOM Practice</title>
+	</head>
+	<body>
+		<div class="main-container">
+			<h1 class="header">Dom Practice 2</h1>
+			<label for="number">Number</label>
+			<input onchange="" class="input" name="number" />
+			<button onclick="displayValue()" class="button">Submit</button>
+			<h3>Your number is:</h3>
+			<p class="displayNumber"></p>
+		</div>
+	</body>
+	<script>
+		function displayValue() {
+			const numberTheyEntered = document.querySelector(".input").value;
+			console.log(typeof numberTheyEntered);
+			const paragraphTargeted = document.querySelector(".displayNumber");
+			paragraphTargeted.innerText = numberTheyEntered;
+			// setTimeout(console.log(display), 3000);
+		}
+
+		// .value can be used to grab the value currently residing inside the element
+		// event handlers can be put on certain html elements. they will trigger when an event happens
+		// onchange: triggers when something has changed inside the element
+		// onclick: triggers on click
+		// event handlers have the power to run functions once triggered
+
+		// setTimeout(displayValue(), 3000);
+		// displayValue();
+	</script>
+</html>

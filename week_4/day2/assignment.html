@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Assignment</title>
+	</head>
+	<body id="root">
+		<!-- <div class="main-container"></div> -->
+	</body>
+	<script>
+		function addDiv() {
+			const root = document.getElementById("root");
+			const mainDiv = document.createElement("div");
+			mainDiv.className = "main-container";
+			// const main = document.getElementsByClassName("main-container");
+
+			// main list
+			const list = document.createElement("ul");
+			ul.id = "ul-list";
+
+			//list items
+			const item1 = document.createElement("li");
+			item1.innerText = "Item 1";
+
+			const item2 = document.createElement("li");
+			item1.innerText = "Item 2";
+
+			const item3 = document.createElement("li");
+			item1.innerText = "Item 3";
+
+			const item4 = document.createElement("li");
+			item1.innerText = "Item 4";
+
+			const item5 = document.createElement("li");
+			item1.innerText = "Item 5";
+
+			// input field
+			const input = document.createElement("input");
+			input.setAttribute("type", "text");
+
+			// radio input
+			const radio = document.createElement("input");
+			radio.setAttribute("type", "radio");
+
+			// append to div
+			list.append(item1, item2, item3, item4, item5);
+			mainDiv.append(list, input, radio);
+			root.append(mainDiv);
+		}
+		addDiv();
+		// main.appendChild(input);
+		// main.appendChild(radio);
+		// list.append(main);
+		// input.append(main);
+		// radio.append(main);
+	</script>
+</html>
