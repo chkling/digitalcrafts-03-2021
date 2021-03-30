@@ -6,7 +6,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>DOM</title>
 	</head>
-	<body>
+	<body id="root">
 		<h1 id="main-header">DOM 101</h1>
 		<ul id="list">
 			<li class="list-item">User</li>
@@ -16,22 +16,42 @@
 		</ul>
 	</body>
 	<script>
-		const heading = document.getElementById("main-header");
-		console.log(heading);
+		function addDiv() {
+			const heading = document.getElementById("main-header");
+			heading.innerText = "He is how old?";
+			heading.style.color = "skyblue";
 
-		const list = document.getElementById("list");
-		console.log(list);
+			// target your element
+			// a. grab the element to view it
+			// b. creat a new element and insert it into that html
+			const newListItem = document.createElement("li");
+			newListItem.innerText = "Returns";
+			const list = document.getElementById("list");
+			list.append(newListItem);
 
-		const listItem = document.getElementsByClassName("list-item");
-		console.log(listItem);
+			const newDiv = document.createElement("div");
+			console.log(newDiv);
+			const newInput = document.createElement("input");
+			newDiv.append(newInput);
+			console.log(newDiv);
+			const root = document.getElementById("root");
+			console.log(root);
+			root.append(newDiv);
+		}
+		addDiv();
+		// const list = document.getElementById("list");
+		// console.log(list);
 
-		const liItems = document.getElementsByTagName("li");
-		console.log(liItems);
-		// node list can be iterated over
-		const lastListItem = document.querySelectorAll(".list-item1");
-		console.log(lastListItem);
-		// fat arrow
-		const holder = lastListItem;
-		console.log(holder);
+		// const listItem = document.getElementsByClassName("list-item");
+		// console.log(listItem);
+
+		// const liItems = document.getElementsByTagName("li");
+		// console.log(liItems);
+		// // node list can be iterated over
+		// const lastListItem = document.querySelectorAll(".list-item1");
+		// console.log(lastListItem);
+		// // fat arrow
+		// const holder = lastListItem;
+		// console.log(holder);
 	</script>
 </html>
