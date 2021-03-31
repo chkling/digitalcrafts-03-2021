@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="style.css" />
+		<title>Tip Calculator 2</title>
+	</head>
+	<body>
+		<div class="container">
+			<div class="card">
+				<h1>Tip Calculator</h1>
+				<label for="cost">Cost ($)</label>
+				<input
+					placeholder="$50"
+					class="cost"
+					type="text"
+					name="cost"
+					id="costycost"
+				/>
+				<label for="tip">Tip (%)</label>
+				<input
+					placeholder="20%"
+					class="tip"
+					type="text"
+					name="tip"
+					id="tipytip"
+				/>
+				<button id="calculateBtn" class="button" type="button">
+					Calculate Total
+				</button>
+				<h3>The total for your bill is: $</h3>
+				<h3 class="total"></h3>
+				<ul class="prev-tips"></ul>
+			</div>
+		</div>
+	</body>
+	<script>
+		function tipCalc() {
+			const billCost = document.querySelector(".cost").value;
+			const billCostConverted = parseInt(billCost);
+
+			const tipAmount = document.querySelector(".tip").value;
+			const tipAmountConverted = parseInt(tipAmount);
+
+			const tipTotal = billCostConverted * (tipAmountConverted / 100);
+			const amountPaid = tipTotal + billCostConverted;
+			const displayValue = document.querySelector(".total");
+			displayValue.innerText = amountPaid.toFixed(2);
+
+			const grabList = document.querySelector(".prev-tips");
+			const listItem = document.createElement("li");
+			listItem.innerText = tipTotal;
+			grabList.append(listItem);
+		}
+
+		const calcBtn = document.querySelector("#calculateBtn");
+		// event listener
+		// .eventListener(event)
+		// .eventListener('click', function(){
+
+		// })
+		function alertMe() {
+			alert("AHHHHHH");
+		}
+		function changeButtonColor() {
+			let color = Math.floor(Math.random() * 16777215).toString(16);
+			calcBtn.style.backgroundColor = `#${color}`;
+		}
+		calcBtn.addEventListener("click", function (e) {
+			console.log(e);
+			tipCalc();
+			changeButtonColor();
+		});
+
+		// for one function
+		// calcBtn.addEventListener("click", tipCalc);
+	</script>
+</html>
