@@ -1,0 +1,66 @@
+<!-- Make a todo list in html and css and js
+You cannot hard code any event listeners to the html, this has to be done with JS
+Has to have styling and layout
+You should be able to add a task by entering it into an input filed, and hitting a ADD TASK button
+each task will have a checkbox next to it that you can check or uncheck
+All the html elements need to be created in JS besides the starter files -->
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="style.css" />
+		<title>To Do List</title>
+	</head>
+	<body>
+		<div class="all">
+			<div class="main-container">
+				<h1>
+					Welcome to Calvin's <br />
+					To-Do List
+				</h1>
+			</div>
+			<div class="secondary-container">
+				<h1><u>Action Items</u></h1>
+				<ul class="main-list"></ul>
+			</div>
+		</div>
+	</body>
+	<script>
+		function addItem() {
+			const list = document.querySelector(".main-list");
+			const listItem = document.createElement("input");
+			listItem.type = "checkbox";
+			const listItem2 = document.createElement("label");
+			const addToDo = document.querySelector("#main-input").value;
+			listItem2.innerText = addToDo;
+			list.append(listItem);
+			list.append(listItem2);
+		}
+		const main = document.querySelector(".main-container");
+		const label = document.createElement("label");
+		label.id = "main-label";
+		label.for = "todo";
+		label.innerText = "Please add a task:";
+		main.append(label);
+
+		const input = document.createElement("input");
+		input.id = "main-input";
+		input.name = "todo";
+		input.type = "text";
+		input.placeholder = "Ex: walk the dog";
+		main.append(input);
+
+		const button = document.createElement("button");
+		button.id = "button";
+		button.type = "button";
+		button.innerText = "Add Task";
+		main.append(button);
+
+		button.addEventListener("click", function () {
+			addItem();
+		});
+	</script>
+</html>
