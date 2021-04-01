@@ -14,6 +14,7 @@
 	<div class="formContainer">
         <table cellpadding='2px' cellspacing='5px'>
             <h2>Tip Calculator</h2>
+            <form>
             <th></th>
             <tr>
                 <td>Bill Amount (in Dollars): </td>
@@ -22,7 +23,7 @@
             <tr>
                 <td>Tip Amount (in %): </td>
                 <td>
-                    <span>% <input class="tip" type='text' id='tip' placeholder='ie. 15'></span>
+                    <span>% <input class="tip" type='text' id='bill' placeholder='ie. 15'></span>
                 </td>
             </tr>
             <td></td>
@@ -31,34 +32,16 @@
                 </td>
             </tr>
         </table>
-        <button onclick="tipCalculator()" class = "button" type='button'>Calculate Total</button>
+        <button onclick="tipCalculator()" class = "button" type='submit'>Calculate Total</button>
         <h3>The total amount with tip is: $ <span class="total"></span>
-            
+        </form>
     </div>
     <div class = "secondary">
     <ul class = "tipHistory"><u>Tip History (in Dollars) </u></ul>
 </div>
 </div>
 </body>
-    <script>
-       function tipCalculator() {
-           // taking inputs
-           const mealCost = Number(document.querySelector(".costOfMeal").value);
-           const tipInput = Number(document.querySelector(".tip").value);
-           // tip calculations
-           const tipPercent = tipInput / 100;
-           const tipAmount = mealCost * tipPercent;
-           const addedTip = tipAmount.toFixed(2)
-           // adding to meal
-           const mealTotal = mealCost + tipAmount;
-           const meal = document.querySelector(".total")
-           meal.innerText = mealTotal.toFixed(2);
-           // tip history
-           const addTip = document.createElement("li");
-           addTip.append(addedTip);
-           const tips = document.querySelector(".tipHistory");
-           tips.append(addTip);
-       }
+    <script src="form.js">
        
     </script>
 </html>

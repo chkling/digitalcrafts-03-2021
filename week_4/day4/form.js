@@ -12,7 +12,7 @@ form.addEventListener("submit", (event) => {
 
 	if (!validateName(textInput.value)) {
 		event.preventDefault();
-		alert("Pleaes enter a valid name without any numbers.");
+		alert("Please enter a valid name without any numbers.");
 	}
 });
 const calvin = 1;
