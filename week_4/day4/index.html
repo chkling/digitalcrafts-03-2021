@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="style.css" />
+		<title>Form Validation</title>
+	</head>
+	<body>
+		<h1>Form Validation</h1>
+		<form class="form" action="">
+			<label for="name">User ID Number</label>
+			<!-- number min 5 max 10 -->
+			<input type="number" name="name" min="5" max="10" id="name-input" />
+
+			<label for="email">Email</label>
+			<!-- @ sign -->
+			<input type="email" name="email" id="email-input" />
+
+			<label for="password">Password</label>
+			<!-- input needed -->
+			<input type="password" name="password" id="password-input" required />
+			<label for="movie">Favorite Movie?</label>
+			<!-- reg ex - required pattern -->
+			<input
+				type="text"
+				name="movie"
+				id="movie-input"
+				required
+				pattern="[A-Za-z0-9]{4,10}"
+			/>
+			<button class="button" type="submit">Submit</button>
+		</form>
+	</body>
+	<script src="form.js"></script>
+</html>
