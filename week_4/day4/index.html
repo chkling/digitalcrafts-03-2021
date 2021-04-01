@@ -8,21 +8,18 @@
 		<title>Form Validation</title>
 	</head>
 	<body>
-		<h1>Form Validation</h1>
+		<!-- <h1>Form Validation</h1>
 		<form class="form" action="">
+            <fieldset>
 			<label for="name">User ID Number</label>
-			<!-- number min 5 max 10 -->
 			<input type="number" name="name" min="5" max="10" id="name-input" />
 
 			<label for="email">Email</label>
-			<!-- @ sign -->
 			<input type="email" name="email" id="email-input" />
 
 			<label for="password">Password</label>
-			<!-- input needed -->
 			<input type="password" name="password" id="password-input" required />
 			<label for="movie">Favorite Movie?</label>
-			<!-- reg ex - required pattern -->
 			<input
 				type="text"
 				name="movie"
@@ -31,7 +28,19 @@
 				pattern="[A-Za-z0-9]{4,10}"
 			/>
 			<button class="button" type="submit">Submit</button>
-		</form>
+        </fieldset>
+		</form> -->
+
+        <div class = "jsform">
+            <h1>JS Validation</h1>
+            <form>
+                <fieldset>
+                    <label for="textInput">Name</label>
+                    <input type="text" name="textInput" id="textInput">
+                    <button class="button2" type="submit">Submit</button>
+            </form>
+        </div>
+    
 	</body>
 	<script src="form.js"></script>
 </html>
