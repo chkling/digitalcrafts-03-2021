@@ -14,7 +14,7 @@
 	<div class="formContainer">
         <table cellpadding='2px' cellspacing='5px'>
             <h2>Tip Calculator</h2>
-            <form>
+            <form name= "form-name" onsubmit="return false">
             <th></th>
             <tr>
                 <td>Bill Amount (in Dollars): </td>
@@ -23,7 +23,7 @@
             <tr>
                 <td>Tip Amount (in %): </td>
                 <td>
-                    <span>% <input class="tip" type='text' id='bill' placeholder='ie. 15'></span>
+                    <span>% <input class="tip" type='text' id='bill2' placeholder='ie. 15'></span>
                 </td>
             </tr>
             <td></td>
@@ -40,8 +40,8 @@
     <ul class = "tipHistory"><u>Tip History (in Dollars) </u></ul>
 </div>
 </div>
+<!-- </form> -->
 </body>
-    <script src="form.js">
-       
+    <script src="form.js">       
     </script>
 </html>

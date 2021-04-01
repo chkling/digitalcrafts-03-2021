@@ -9,27 +9,38 @@ function tipCalculator() {
 	// adding to meal
 	const mealTotal = mealCost + tipAmount;
 	const meal = document.querySelector(".total");
-	meal.innerText = mealTotal.toFixed(2);
+	if (!isNaN(mealTotal)) {
+		meal.innerText = mealTotal.toFixed(2);
+	}
 	// tip history
 	const addTip = document.createElement("li");
-	addTip.append(addedTip);
 	const tips = document.querySelector(".tipHistory");
-	tips.append(addTip);
-
-	// form validation
-	const form = document.querySelector("form");
-
-	const validateNumber = (num) => {
-		myRegex = /[0-9]/;
-		return myRegex.test(num);
-	};
-
-	form.addEventListener("submit", (event) => {
-		const bill = document.querySelector("#bill");
-
-		if (!validateNumber(bill.value)) {
-			event.preventDefault();
-			alert("Please enter a valid number.");
-		}
-	});
+	if (!isNaN(addedTip) && !isNaN(addedTip)) {
+		addTip.append(addedTip);
+		tips.append(addTip);
+	}
 }
+
+// form validation
+const form = document.querySelector("form");
+
+const validateNumber = (num) => {
+	myRegex = /[0-9]/g;
+	return myRegex.test(num);
+};
+
+form.addEventListener("submit", (event) => {
+	const bill = document.querySelector("#bill");
+	const bill2 = document.querySelector("#bill2");
+
+	if (!validateNumber(bill.value) || !validateNumber(bill2.value)) {
+		event.preventDefault();
+		alert("Please enter a valid number.");
+	}
+});
+
+// const button = document.querySelector(".button");
+
+// button.addEventListener("click", function (e) {
+// 	tipCalculator();
+// });
