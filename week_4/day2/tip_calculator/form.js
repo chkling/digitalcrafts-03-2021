@@ -15,7 +15,7 @@ function tipCalculator() {
 	// tip history
 	const addTip = document.createElement("li");
 	const tips = document.querySelector(".tipHistory");
-	if (!isNaN(addedTip) && !isNaN(addedTip)) {
+	if (!isNaN(addedTip)) {
 		addTip.append(addedTip);
 		tips.append(addTip);
 	}
