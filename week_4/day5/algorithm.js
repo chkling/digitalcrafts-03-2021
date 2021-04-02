@@ -32,4 +32,4 @@ const integerReversal = (num) => {
 	}
 	return console.log(newNum);
 };
-integerReversal(1234);
+integerReversal(123400);
