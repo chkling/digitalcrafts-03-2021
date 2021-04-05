@@ -4,11 +4,24 @@
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="style.css" />
 		<title>Your Weather</title>
 	</head>
 	<body>
-		<h1>Your Current Weather</h1>
-		<div class="root"></div>
+		<div id="main">
+			<h1 class="main-header">Weather Generator</h1>
+			<div class="root">
+				<form>
+					<fieldset>
+						<label for="zipcode">Please input your five digit zipcode</label>
+						<input type="text" name="zipcode" id="zip-input" />
+						<button type="submit" id="submit-button">Submit</button>
+					</fieldset>
+				</form>
+				<br />
+				<h1 class="header">Today's forecast for <span id="place"></span></h1>
+			</div>
+		</div>
 	</body>
 	<script src="script.js"></script>
 </html>

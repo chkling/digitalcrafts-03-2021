@@ -13,13 +13,12 @@ const getCurrentWeather = async () => {
 		return newTime;
 	};
 
-	let root = document.querySelector(".root");
+	const root = document.querySelector(".root");
 	console.log(formattedJson);
 
 	// Location
-	let location = document.createElement("h2");
-	location.innerHTML = "Today's forecast for " + formattedJson.name + ".";
-	root.append(location);
+	const location = document.querySelector("#place");
+	location.innerHTML = formattedJson.name;
 
 	// Temperature
 	let temp = Math.round(formattedJson.main["temp"]);

@@ -1,0 +1,21 @@
+* {
+	margin: 0;
+	border: 0;
+	box-sizing: border-box;
+}
+
+#main {
+	display: grid;
+	place-items: center;
+	height: 100vh;
+	border: 2px black solid;
+}
+
+.main-header {
+	border: 2px black solid;
+	position: absolute;
+}
+
+.root {
+	border: 2px black solid;
+}
