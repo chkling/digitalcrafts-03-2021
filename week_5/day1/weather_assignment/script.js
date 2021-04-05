@@ -7,11 +7,11 @@ const validateZip = (num) => {
 };
 
 const getCurrentWeather = async () => {
-	const zipInput = document.querySelector("#zip-input").value;
-	console.log(zipInput);
+	// const zipInput = document.querySelector("#zip-input").value;
+	// console.log(zipInput);
 
 	const data = await fetch(
-		`http://api.openweathermap.org/data/2.5/weather?zip=${zipInput},us&appid=4d600fa78be64ecc6c21ac5bebf9356a&units=imperial`
+		`http://api.openweathermap.org/data/2.5/weather?zip=30324,us&appid=4d600fa78be64ecc6c21ac5bebf9356a&units=imperial`
 	);
 
 	const formattedJson = await data.json();
@@ -64,4 +64,6 @@ const getCurrentWeather = async () => {
 	weather.append(sunTimes);
 };
 
-submitBtn.addEventListener("click", (event) => getCurrentWeather());
+// submitBtn.addEventListener("click", (event) => getCurrentWeather());
+
+getCurrentWeather();

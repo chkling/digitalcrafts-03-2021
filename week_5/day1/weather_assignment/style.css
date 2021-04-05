@@ -9,6 +9,9 @@
 	display: grid;
 	place-items: center;
 	height: 100vh;
+	background-image: url(images/pexels-photo-167699.jpeg);
+	background-position: center center;
+	background-size: 100% 100%;
 }
 
 .main-header {
