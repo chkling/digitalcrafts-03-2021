@@ -3,21 +3,12 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>XML HTTP Request</title>
+		<meta name="viewport" content="width=<device-width>, initial-scale=1.0" />
+		<title>Document</title>
 	</head>
 	<body>
 		<h1>XML HTTP Request</h1>
+		<div class="root"></div>
 	</body>
-	<script>
-		const request = new XMLHttpRequest();
-		// console.log(request);
-
-		request.onreadystatechange = function () {
-			console.log("console.log this ", this);
-		};
-		// open takes in two arguements, HTTP Method, is the URL or location of what you want to get
-		request.open("GET", "./sample.txt");
-		request.send();
-	</script>
+	<script src="script.js"></script>
 </html>
