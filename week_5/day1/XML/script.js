@@ -21,12 +21,13 @@ const getPokemonDataWithAsyncAwait = async () => {
 	const data = await fetch("https://pokeapi.co/api/v2/pokemon/6");
 	// convert to json
 	const formattedJson = await data.json();
-	let name = document.createElement("h1");
-	name.innerHTML = formattedJson.name;
-	let img = document.createElement("img");
-	let root = document.querySelector(".root");
-	img.src = formattedJson.sprites.front_default;
-	root.append(img, name);
+	console.log(formattedJson);
+	// let name = document.createElement("h1");
+	// name.innerHTML = formattedJson.name;
+	// let img = document.createElement("img");
+	// let root = document.querySelector(".root");
+	// img.src = formattedJson.sprites.front_default;
+	// root.append(img, name);
 };
 
 const getPokemonDataWithPromises = () => {
