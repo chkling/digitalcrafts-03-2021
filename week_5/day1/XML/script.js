@@ -22,12 +22,12 @@ const getPokemonDataWithAsyncAwait = async () => {
 	// convert to json
 	const formattedJson = await data.json();
 	console.log(formattedJson);
-	// let name = document.createElement("h1");
-	// name.innerHTML = formattedJson.name;
-	// let img = document.createElement("img");
-	// let root = document.querySelector(".root");
-	// img.src = formattedJson.sprites.front_default;
-	// root.append(img, name);
+	let name = document.createElement("h1");
+	name.innerHTML = formattedJson.name;
+	let img = document.createElement("img");
+	let root = document.querySelector(".root");
+	img.src = formattedJson.sprites.front_default;
+	root.append(img, name);
 };
 
 const getPokemonDataWithPromises = () => {
