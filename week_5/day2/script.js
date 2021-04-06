@@ -18,13 +18,16 @@ const fetchPokemonData = async () => {
 	console.log(json);
 	let counter = 1;
 	for (let pokemon of json.results) {
+		const pokemonContainer = document.createElement("div");
+		pokemonContainer.className = "pokemon";
 		const nameOfPokemon = document.createElement("h3");
 		nameOfPokemon.innerHTML = pokemon.name;
 		const img = document.createElement("img");
 		img.src = `https://pokeres.bastionbot.org/images/pokemon/${counter}.png`;
 		img.height = "250";
 		img.width = "250";
-		mainContainer.append(nameOfPokemon, img);
+		pokemonContainer.append(nameOfPokemon, img);
+		mainContainer.append(pokemonContainer);
 		counter += 1;
 	}
 	return json;

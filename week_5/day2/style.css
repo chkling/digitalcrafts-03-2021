@@ -15,8 +15,20 @@ button {
 .main-container {
 	padding: 20px;
 	margin: 20px;
-	justify-content: center;
+	justify-content: space-around;
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
+	background-color: #f4f4f4;
+}
+
+.pokemon {
+	text-align: center;
+	background-color: #f4f4f4;
+}
+
+img,
+h3 {
+	background-color: rgb(117, 112, 192);
+	color: white;
 }
