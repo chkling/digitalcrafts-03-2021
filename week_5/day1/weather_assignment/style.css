@@ -20,14 +20,14 @@
 	padding: 10px;
 	margin: 10px;
 	border-radius: 5px;
-	background-color: lightblue;
+	background-color: rgba(173, 216, 230, 0.747);
 }
 
 .header {
 	font-size: 22px;
 	text-align: center;
 	border: 10px;
-	margin: 10px;
+	margin: 50px 10px 10px 10px;
 }
 
 .root {
@@ -37,7 +37,10 @@
 	border: 2px black solid;
 	padding: 10px;
 	margin: 10px;
-	background-color: lightblue;
+	background-color: rgba(173, 216, 230, 0.747);
+	height: 60vh;
+	width: 30vw;
+	border-radius: 10px;
 }
 
 .form-input {
@@ -46,19 +49,27 @@
 	align-items: center;
 }
 
+#zip-text {
+	font-weight: bold;
+	font-size: 18px;
+}
+
 #zip-input {
-	border: black 2px solid;
+	border: darkblue 2px solid;
 	outline: none;
 	border-radius: 3px;
 	padding: 5px;
-	margin: 5px;
+	margin: 20px 10px 10px 10px;
 }
 
 #submit-button {
 	width: 100px;
 	height: 30px;
 	padding: 5px;
-	margin: 5px;
+	margin: 10px 10px 10px 10px;
+	border: darkblue 2px solid;
+	border-radius: 5px;
+	font-weight: bolder;
 }
 
 #submit-button:hover {
@@ -68,4 +79,10 @@
 }
 .weather {
 	list-style: none;
+	margin: 20px 10px 10px 10px;
+}
+
+.weather li {
+	margin: 3px;
+	font-weight: bolder;
 }

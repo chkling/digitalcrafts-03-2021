@@ -1,17 +1,15 @@
-const form = document.querySelector("form");
-const submitBtn = document.querySelector("#submit-button");
+// const form = document.querySelector("form");
 
-const validateZip = (num) => {
-	myRegex = /[0-9]+/;
-	return myRegex.test(num);
-};
+// const validateZip = (num) => {
+// 	myRegex = /[0-9]+/;
+// 	return myRegex.test(num);
+// };
 
 const getCurrentWeather = async () => {
 	// const zipInput = document.querySelector("#zip-input").value;
 	// console.log(zipInput);
-
 	const data = await fetch(
-		`http://api.openweathermap.org/data/2.5/weather?zip=30324,us&appid=4d600fa78be64ecc6c21ac5bebf9356a&units=imperial`
+		`https://api.openweathermap.org/data/2.5/weather?zip=30324,us&appid=4d600fa78be64ecc6c21ac5bebf9356a&units=imperial`
 	);
 
 	const formattedJson = await data.json();
@@ -25,8 +23,8 @@ const getCurrentWeather = async () => {
 		return newTime;
 	};
 
-	const root = document.querySelector(".root");
-	console.log(formattedJson);
+	// const root = document.querySelector(".root");
+	// console.log(formattedJson);
 
 	// Location
 	const location = document.querySelector("#place");
@@ -64,6 +62,9 @@ const getCurrentWeather = async () => {
 	weather.append(sunTimes);
 };
 
-// submitBtn.addEventListener("click", (event) => getCurrentWeather());
+// const submitBtn = document.querySelector("#submit-button");
+// submitBtn.addEventListener("click", () => {
+// 	getCurrentWeather();
+// });
 
 getCurrentWeather();
