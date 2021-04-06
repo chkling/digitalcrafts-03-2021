@@ -1,0 +1,61 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: fantasy;
+}
+.main {
+	padding: 2px 16px;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	flex-wrap: wrap;
+}
+
+.card {
+	/* Add shadows to create the "card" effect */
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+	transition: 0.3s;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	flex-wrap: wrap;
+}
+
+/* On mouse-over, add a deeper shadow */
+.card:hover {
+	box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+.person,
+.animal {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin: 10px;
+	padding: 20px;
+	background-color: rgb(122, 191, 255);
+	border: 2px black solid;
+	border-radius: 5px;
+	height: 400px;
+	width: 400px;
+}
+
+img {
+	/* height: 15rem;
+	width: 20rem;
+	margin-bottom: 20px; */
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	height: 100%;
+	width: 100%;
+	text-align: center;
+}
+
+h3 {
+	align-items: center;
+	text-align: center;
+}
