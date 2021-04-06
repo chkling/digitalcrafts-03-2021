@@ -1,1 +1,0 @@
-`https://api.openweathermap.org/data/2.5/weather?zip=${zipInput},us&appid=4d600fa78be64ecc6c21ac5bebf9356a&units=imperial`
