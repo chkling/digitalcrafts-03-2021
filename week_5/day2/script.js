@@ -10,16 +10,30 @@
 // 	.then((responseWeGetBack) => responseWeGetBack.json())
 // 	.then((data) => console.log(data));
 
+const mainContainer = document.querySelector(".main-container");
+
 const fetchPokemonData = async () => {
 	let response = await fetch("https://pokeapi.co/api/v2/pokemon?&limit=151");
 	let json = await response.json();
-
-	const nameOfPokemon = document.createElement("h3");
-	console.log(nameOfPokemon);
+	console.log(json);
+	let counter = 1;
+	for (let pokemon of json.results) {
+		const nameOfPokemon = document.createElement("h3");
+		nameOfPokemon.innerHTML = pokemon.name;
+		const img = document.createElement("img");
+		img.src = `https://pokeres.bastionbot.org/images/pokemon/${counter}.png`;
+		img.height = "250";
+		img.width = "250";
+		mainContainer.append(nameOfPokemon, img);
+		counter += 1;
+	}
 	return json;
 
 	// to improve the above, you would wrap in a Promise.all()
 };
+
+const submit = document.querySelector("button");
+submit.addEventListener("click", (e) => fetchPokemonData());
 
 // if promise rejected, then it goes into .catch
 // .catch(console.log("woops, error!"));
