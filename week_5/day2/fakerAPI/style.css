@@ -4,13 +4,29 @@
 	box-sizing: border-box;
 	font-family: fantasy;
 }
+
+.heading {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	float: left;
+	margin: 20px;
+	width: 100%;
+}
+
 .main {
 	padding: 2px 16px;
 	display: flex;
 	flex-direction: row;
-	justify-content: space-between;
 	align-items: center;
 	flex-wrap: wrap;
+}
+
+h1,
+button {
+	padding: 10px;
+	margin: 20px;
 }
 
 .card {
@@ -53,9 +69,20 @@ img {
 	height: 100%;
 	width: 100%;
 	text-align: center;
+	border-radius: 5px;
 }
 
 h3 {
 	align-items: center;
 	text-align: center;
+}
+
+button {
+	height: 40px;
+	width: 100px;
+}
+
+button:hover {
+	cursor: pointer;
+	background-color: lightsalmon;
 }
