@@ -1,0 +1,15 @@
+Create a website that shows the information of both People and Places when you click two buttons. Those buttons will say Get People, Get Places
+
+You will use the faker api https://fakerapi.it/en
+
+Read through the documentation to see what you need to put in your fetch, so that you get the right data back
+
+READ THE DOCUMENTATION
+
+Create the HTML you want, to display the data in a card format like this: https://www.w3schools.com/howto/howto_css_cards.asp
+
+Use whatever CSS, bootstrap, whatever I don't care. You can use designs from other people or come up with your own or use a framework.
+
+Minimum of 30 cards per example.
+
+This is due 4/8 in the AM.
