@@ -6,10 +6,10 @@
 // };
 
 const getCurrentWeather = async () => {
-	// const zipInput = document.querySelector("#zip-input").value;
-	// console.log(zipInput);
+	const zipInput = document.querySelector("#zip-input").value;
+	console.log(zipInput);
 	const data = await fetch(
-		`https://api.openweathermap.org/data/2.5/weather?zip=30324,us&appid=4d600fa78be64ecc6c21ac5bebf9356a&units=imperial`
+		`https://api.openweathermap.org/data/2.5/weather?zip=${zipInput},us&appid=4d600fa78be64ecc6c21ac5bebf9356a&units=imperial`
 	);
 
 	const formattedJson = await data.json();
@@ -62,9 +62,10 @@ const getCurrentWeather = async () => {
 	weather.append(sunTimes);
 };
 
-// const submitBtn = document.querySelector("#submit-button");
-// submitBtn.addEventListener("click", () => {
-// 	getCurrentWeather();
-// });
+const submitBtn = document.querySelector("#submit-button");
+submitBtn.addEventListener("click", (e) => {
+	e.preventDefault();
+	getCurrentWeather();
+});
 
-getCurrentWeather();
+// getCurrentWeather();
