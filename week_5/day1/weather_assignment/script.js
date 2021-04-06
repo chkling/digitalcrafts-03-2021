@@ -7,7 +7,6 @@
 
 const getCurrentWeather = async () => {
 	const zipInput = document.querySelector("#zip-input").value;
-	console.log(zipInput);
 	const data = await fetch(
 		`https://api.openweathermap.org/data/2.5/weather?zip=${zipInput},us&appid=4d600fa78be64ecc6c21ac5bebf9356a&units=imperial`
 	);
@@ -22,9 +21,6 @@ const getCurrentWeather = async () => {
 		let newTime = hours + ":" + minutes.substr(-2);
 		return newTime;
 	};
-
-	// const root = document.querySelector(".root");
-	// console.log(formattedJson);
 
 	// Location
 	const location = document.querySelector("#place");
@@ -56,8 +52,10 @@ const getCurrentWeather = async () => {
 	sunTimes.innerText =
 		"Sunrise: " +
 		sunCalc(formattedJson.sys.sunrise) +
-		" Sunset: " +
-		sunCalc(formattedJson.sys.sunset);
+		"am" +
+		"   Sunset: " +
+		sunCalc(formattedJson.sys.sunset) +
+		"pm";
 
 	weather.append(sunTimes);
 };
@@ -67,5 +65,3 @@ submitBtn.addEventListener("click", (e) => {
 	e.preventDefault();
 	getCurrentWeather();
 });
-
-// getCurrentWeather();
