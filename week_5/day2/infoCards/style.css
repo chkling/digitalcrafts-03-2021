@@ -6,7 +6,8 @@
 }
 
 body {
-	background-image: url(images/trees.jpeg);
+	/* background-image: url(images/trees.jpeg); */
+	background-color: rgba(80, 139, 139, 0.342);
 	background-size: 100%;
 	width: 100%;
 }
@@ -67,7 +68,7 @@ button {
 	color: #f4f4f4;
 	border: 2px white solid;
 	border-radius: 3px;
-	height: 340px;
+	height: 300px;
 	width: 174px;
 	flex-wrap: wrap;
 	overflow: auto;
@@ -77,8 +78,6 @@ button {
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
-	height: 170px;
-	width: 170px;
 	text-align: center;
 	border-radius: 1px;
 	border-bottom: #f4f4f4 solid 2px;
@@ -88,11 +87,10 @@ button {
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
-	height: 150px;
-	width: 170px;
 	text-align: center;
 	border-radius: 1px;
 	border-bottom: #f4f4f4 solid 2px;
+	overflow: hidden;
 }
 
 h3 {

@@ -16,6 +16,7 @@ const fetchPokemonData = async () => {
 	let response = await fetch("https://pokeapi.co/api/v2/pokemon?&limit=151");
 	let json = await response.json();
 	console.log(json);
+	console.log(json.results);
 	let counter = 1;
 	for (let pokemon of json.results) {
 		const pokemonContainer = document.createElement("div");
