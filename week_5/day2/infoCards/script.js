@@ -1,9 +1,7 @@
 const main = document.querySelector(".main");
 
 const fetchPerson = async () => {
-	let response = await fetch(
-		"https://fakerapi.it/api/v1/persons?_quantity=1&_gender=male&_birthday_start=2005-01-01"
-	);
+	let response = await fetch("https://randomuser.me/api/");
 	let json = await response.json();
 	console.log(json);
 	// container
@@ -11,20 +9,22 @@ const fetchPerson = async () => {
 	personContainer.className = "person";
 	// person name
 	const nameOfPerson = document.createElement("h3");
+	nameOfPerson.className = "person-name";
 	nameOfPerson.innerHTML =
-		json.data[0]["firstname"] + " " + json.data[0]["lastname"];
+		json.results[0]["name"]["first"] + " " + json.results[0]["name"]["last"];
 	// image
 	const img = document.createElement("img");
-	img.src = json.data[0]["image"];
+	img.src = json.results[0]["picture"]["large"];
 	// birthday
 	const birthday = document.createElement("h3");
-	birthday.innerHTML = json.data[0]["birthday"];
+	birthday.innerHTML = json.results[0]["dob"]["age"];
 	//location
-	const location = document.createElement("h3");
-	location.innerHTML =
-		json.data[0]["address"]["city"] + ", " + json.data[0]["address"]["country"];
+	const state = document.createElement("h3");
+	state.innerHTML = json.results[0]["location"]["state"] + ",";
+	const country = document.createElement("h3");
+	country.innerHTML = json.results[0]["location"]["country"];
 	// appending
-	personContainer.append(img, nameOfPerson, birthday, location);
+	personContainer.append(img, nameOfPerson, birthday, state, country);
 	main.append(personContainer);
 };
 
@@ -39,6 +39,7 @@ const fetchAnimals = async () => {
 	animalContainer.className = "animal";
 	// animal name
 	const nameOfAnimal = document.createElement("h3");
+	nameOfAnimal.className = "animal-name";
 	nameOfAnimal.innerHTML = json.data[0]["title"];
 	// image
 	const img = document.createElement("img");
