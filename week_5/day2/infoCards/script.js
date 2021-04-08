@@ -5,7 +5,6 @@ const fetchPerson = async () => {
 		"https://fakerapi.it/api/v1/persons?_quantity=30&_gender=male&_birthday_start=2005-01-01"
 	);
 	let json = await response.json();
-	console.log(json);
 	let counter = 1;
 	for (let people of json.data) {
 		// container
@@ -38,10 +37,8 @@ const fetchAnimals = async () => {
 		"https://fakerapi.it/api/v1/images?_quantity=30&_type=kittens&_height=300"
 	);
 	let json = await response.json();
-	console.log(json);
 	counter = 1;
 	for (let cat of json.data) {
-		console.log(cat);
 		// container
 		const animalContainer = document.createElement("div");
 		animalContainer.className = "animal";
