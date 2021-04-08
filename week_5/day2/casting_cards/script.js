@@ -61,12 +61,10 @@ const fetchAnimals = async () => {
 
 const subPeople = document.querySelector(".people-button");
 subPeople.addEventListener("click", (e) => {
-	e.preventDefault();
 	fetchPerson();
 });
 
 const subAnimal = document.querySelector(".animal-button");
 subAnimal.addEventListener("click", (e) => {
-	e.preventDefault();
 	fetchAnimals();
 });
