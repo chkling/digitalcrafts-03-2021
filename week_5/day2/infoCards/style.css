@@ -30,7 +30,7 @@ body {
 	float: left;
 	width: 100%;
 	background-color: #192373ad;
-	border-bottom: 2px black solid;
+	border-bottom: 2px rgba(0, 0, 0, 0.37) solid;
 	color: #f4f4f4;
 	padding-bottom: 20px;
 }

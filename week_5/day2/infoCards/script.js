@@ -6,7 +6,6 @@ const fetchPerson = async () => {
 	);
 	let json = await response.json();
 	console.log(json);
-	console.log(json.data);
 	let counter = 1;
 	for (let people of json.data) {
 		// container
@@ -52,7 +51,7 @@ const fetchAnimals = async () => {
 		nameOfAnimal.innerHTML = cat["title"];
 		// image
 		const img = document.createElement("img");
-		img.height = "150";
+		img.height = "170";
 		img.width = "170";
 		img.src = `https://placekitten.com/600/30${counter}`;
 		// appending
