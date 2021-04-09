@@ -1,0 +1,50 @@
+body {
+	color: #fd49a0;
+	font-family: Verdana, sans-serif;
+	text-align: center;
+	background: #6441a5; /* fallback for old browsers */
+	background: -webkit-linear-gradient(
+		to right,
+		#2a0845,
+		#6441a5
+	); /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(
+		to right,
+		#2a0845,
+		#6441a5
+	); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+.media {
+	display: none;
+}
+
+@media screen and (max-width: 960px) {
+	.media {
+		display: contents;
+	}
+	.media:after {
+		content: "Media query says hai 😉";
+	}
+	body {
+		color: #05445e;
+		background: #43cea2; /* fallback for old browsers */
+		background: -webkit-linear-gradient(
+			to right,
+			#185a9d,
+			#43cea2
+		); /* Chrome 10-25, Safari 5.1-6 */
+		background: linear-gradient(
+			to right,
+			#185a9d,
+			#43cea2
+		); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	}
+	.main-container {
+		display: grid;
+		grid-template-columns: 100px 1fr 100px;
+		/* place-items: center; */
+	}
+	.inner-container {
+		grid-column: 2/2;
+	}
+}
