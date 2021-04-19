@@ -1,5 +1,6 @@
 const express = require("express");
 const app = express();
+const path = require("path");
 const PORT = 3008;
 const { readFile } = require("fs");
 app.use(express.json());
@@ -32,4 +33,8 @@ app.listen(PORT, () => {
 	console.log(`Your server is being hosted on localhost: ${PORT}`);
 });
 
-app.use(express.static("public"));
+// app.use(express.static(__dirname + "/public"));
+{
+	/* <link rel="stylesheet" type="text/css" href="public/css/style.css" />; */
+}
+app.use(express.static(__dirname + "/public"));
