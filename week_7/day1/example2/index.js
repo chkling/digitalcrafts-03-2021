@@ -3,18 +3,6 @@ const app = express();
 const PORT = 3001;
 const { readFile } = require("fs");
 
-// routes
-//1 default page
-//2 home page
-//3 about
-//4 FAQ
-
-// app.get("/", (req, res) => {
-// 	readFile("index.html", "utf8", (err, html) => {
-// 		res.send(html);
-// 	});
-// });
-
 app.get("/home", (req, res) => {
 	readFile("index.html", "utf8", (err, html) => {
 		res.send(html);
