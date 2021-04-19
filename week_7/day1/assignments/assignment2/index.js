@@ -4,8 +4,8 @@ const PORT = 3008;
 const { readFile } = require("fs");
 app.use(express.json());
 
-app.get("/", (req, res) => {
-	readFile(".index.html", "utf8", (err, html) => {
+app.get("/home", (req, res) => {
+	readFile("index.html", "utf8", (err, html) => {
 		res.send(html);
 	});
 });
@@ -22,6 +22,12 @@ app.get("/contact", (req, res) => {
 	});
 });
 
+app.get("*", (req, res) => {
+	readFile("error.html", "utf8", (err, html) => {
+		res.send(html);
+	});
+});
+
 app.listen(PORT, () => {
-	console.log(`Running server on ${PORT}`);
+	console.log(`Your server is being hosted on localhost: ${PORT}`);
 });
