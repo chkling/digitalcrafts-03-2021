@@ -3,7 +3,10 @@ const app = express();
 const path = require("path");
 const PORT = 3008;
 const { readFile } = require("fs");
+
 app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+app.use(express.static("./public"));
 
 app.get("/index", (req, res) => {
 	readFile("index.html", "utf8", (err, html) => {
@@ -32,11 +35,3 @@ app.get("*", (req, res) => {
 app.listen(PORT, () => {
 	console.log(`Your server is being hosted on localhost: ${PORT}`);
 });
-
-// app.use(express.static(__dirname + "/public"));
-{
-	/* <link rel="stylesheet" type="text/css" href="public/css/style.css" />; */
-}
-// app.use(express.static(__dirname + "/public"));
-app.use(express.urlencoded({ extended: true }));
-app.use(express.static("./public"));
