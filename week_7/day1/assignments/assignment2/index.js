@@ -37,4 +37,6 @@ app.listen(PORT, () => {
 {
 	/* <link rel="stylesheet" type="text/css" href="public/css/style.css" />; */
 }
-app.use(express.static(__dirname + "/public"));
+// app.use(express.static(__dirname + "/public"));
+app.use(express.urlencoded({ extended: true }));
+app.use(express.static("./public"));
