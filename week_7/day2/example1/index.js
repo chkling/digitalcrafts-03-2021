@@ -1,11 +1,41 @@
+const http = require("http");
+
+const hostname = "127.0.0.1";
+const PORT = 3011;
+
 const express = require("express");
 const app = express();
-const PORT = 3011;
-app.use(express.json());
+
+const es6Renderer = require("express-es6-template-engine");
+app.engine("html", es6Renderer);
+app.set("views", "templates");
+app.set("view engine", "html");
+
+// const server = http.createServer(app);
+// const db = require("./db");
 
 app.get("/", (req, res) => {
-	res.send("Welcome Home");
+	res.render("home");
 });
+
+app.get("/friends", (req, res) => {
+	res.render("friend");
+});
+
+// app.get("/friends/:handle", (req, res) => {
+// 	const { handle } = req.params;
+// 	const friend = db.find((f) => f.handle === handle);
+
+// 	if (friend) {
+// 		res.render("friend", {
+// 			locals: {
+// 				friend,
+// 			},
+// 		});
+// 	} else {
+// 		res.status(404).send(`no friend with handle ${handle}`);
+// 	}
+// });
 
 app.get("/about", (req, res) => {
 	res.send("About this website");
