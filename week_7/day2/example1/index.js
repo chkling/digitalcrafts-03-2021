@@ -11,31 +11,31 @@ app.engine("html", es6Renderer);
 app.set("views", "templates");
 app.set("view engine", "html");
 
-// const server = http.createServer(app);
-// const db = require("./db");
+const server = http.createServer(app);
+const db = require("./db");
 
 app.get("/", (req, res) => {
 	res.render("home");
 });
 
-app.get("/friends", (req, res) => {
-	res.render("friend");
-});
-
-// app.get("/friends/:handle", (req, res) => {
-// 	const { handle } = req.params;
-// 	const friend = db.find((f) => f.handle === handle);
-
-// 	if (friend) {
-// 		res.render("friend", {
-// 			locals: {
-// 				friend,
-// 			},
-// 		});
-// 	} else {
-// 		res.status(404).send(`no friend with handle ${handle}`);
-// 	}
+// app.get("/friends", (req, res) => {
+// 	res.render("friend");
 // });
+
+app.get("/friends/:handle", (req, res) => {
+	const { handle } = req.params;
+	const friend = db.find((f) => f.handle === handle);
+
+	if (friend) {
+		let htmlData = ``;
+		htmlData += `<h1>${friend.name}</h1>`;
+		htmlData += `<h3>${friend.handle}</h1>`;
+		htmlData += `<h3>${friend.skill}</h1>`;
+		res.send(htmlData);
+	} else {
+		res.status(404).send(`no friend with handle ${handle}`);
+	}
+});
 
 app.get("/about", (req, res) => {
 	res.send("About this website");
