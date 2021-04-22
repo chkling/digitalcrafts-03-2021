@@ -12,12 +12,13 @@ app.get("/", (req, res) => {
 });
 
 // CREATE
-app.post("/pets", async (req, res) => {
+app.post("/add_pet", async (req, res) => {
 	try {
-		const { animal } = req.body;
-		const newPet = await pool.query("INSERT INTO pets (animal) VALUES ($1)", [
-			animal,
-		]);
+		const { animal, quantity } = req.body;
+		const newPet = await pool.query(
+			"INSERT INTO pets (animal, quantity) VALUES ($1, $2)",
+			[animal, quantity]
+		);
 		res.json(newPet);
 	} catch (err) {
 		console.log(err.message);
@@ -53,10 +54,10 @@ app.get("/list_pets/:id", async (req, res) => {
 app.put("/update_pets/:id", async (req, res) => {
 	try {
 		const { id } = req.params;
-		const { animal } = req.body;
+		const { animal, quantity } = req.body;
 		const updateSinglePet = await pool.query(
-			"UPDATE pets SET description = $1 WHERE pets_id = ($2)",
-			[animal, id]
+			"UPDATE pets SET (animal, quantity) = ($1, $2) WHERE pets_id = ($3)",
+			[animal, quantity, id]
 		);
 		res.json(updateSinglePet.rows);
 	} catch (err) {
