@@ -3,12 +3,42 @@ const app = express();
 const cors = require("cors");
 const port = process.env.PORT || 3000;
 const pool = require("./db.js");
+// const es6Renderer = require("express-es6-template-engine");
 
+// simulate a database
+// const people = [
+// 	{
+// 		people_id: 1,
+// 		name: "Cat",
+// 		age: 33,
+// 		job: "construction worker",
+// 		listOfKnownAliases: ["Luke", "Luca"],
+// 	},
+// 	{
+// 		people_id: 2,
+// 		name: "Mark",
+// 		age: 90,
+// 		job: "retired",
+// 		listOfKnownAliases: ["Mark"],
+// 	},
+// 	{
+// 		people_id: 3,
+// 		name: "Nathan",
+// 		age: 22,
+// 		job: "student",
+// 		listOfKnownAliases: ["Nate", "Nathaniel"],
+// 	},
+// ];
+
+// middleware
+// app.engine("html", es6Renderer);
+// app.set("views", "../template");
+// app.set("view engine", "html");
 app.use(express.json());
 app.use(cors());
 
 app.get("/", (req, res) => {
-	res.send("Welcome to your contact list!");
+	res.send("Welcome to your contact list.");
 });
 
 //CREATE
@@ -27,6 +57,17 @@ app.post("/add_contact", async (req, res) => {
 
 //REVIEW
 app.get("/view_contacts", async (req, res) => {
+	try {
+		const view = await pool.query(
+			"SELECT * from contacts ORDER BY contacts_id"
+		);
+		res.json(view.rows);
+	} catch (err) {
+		console.log(err.message);
+	}
+});
+
+app.get("/view_contacts/:id", async (req, res) => {
 	try {
 		const view = await pool.query(
 			"SELECT * from contacts ORDER BY contacts_id"
