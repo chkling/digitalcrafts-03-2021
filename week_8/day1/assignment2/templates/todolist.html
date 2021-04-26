@@ -7,14 +7,23 @@
 		<title>TO DO</title>
 	</head>
 	<body>
-		<h1>To Do List</h1>
+		<h1>Task</h1>
 		<p>Task</p>
 		<p>${todo.task}</p>
 		<p>Priority</p>
 		<p>${todo.priority}</p>
-		<form action="" method="post">
-			<input type="text" />
-			<input type="submit" />
-		</form>
 	</body>
+	<script>
+		const sendTodo = (e) => {
+
+		    const datatodb = await fetch("url",
+		    {
+		        method: 'POST', // *GET, POST, PUT, DELETE, etc.
+		        headers: {
+		            'Content-Type': 'application/json'
+		        },
+		        body:{}
+		    })
+		}
+	</script>
 </html>

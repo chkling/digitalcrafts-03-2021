@@ -16,16 +16,22 @@
 				<title>TO DO</title>
 			</head>
 			<body>
-				<h1>To Do List</h1>
-				<p>Task</p>
-				<p>${todo.task}</p>
-				<p>Priority</p>
-				<p>${todo.priority}</p>
-				<form action="" method="post">
-					<input type="text" />
-					<input type="submit" />
-				</form>
+				<h1>Welcome to Your To Do List</h1>
+				<a href="/todolist">Click here to visit your list</a>
 			</body>
 		</html>
 	</body>
+	<script>
+		const sendTodo = (e) => {
+
+		    const datatodb = await fetch("url",
+		    {
+		        method: 'POST', // *GET, POST, PUT, DELETE, etc.
+		        headers: {
+		            'Content-Type': 'application/json'
+		        },
+		        body:{}
+		    })
+		}
+	</script>
 </html>
