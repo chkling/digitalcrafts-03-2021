@@ -15,6 +15,10 @@ app.get("/", (req, res) => {
 	res.send("Welcome to your TO DO list.");
 });
 
+app.get("/home", (req, res) => {
+	res.render("home");
+});
+
 // CREATE
 app.post("/add", async (req, res) => {
 	try {
