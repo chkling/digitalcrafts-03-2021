@@ -38,8 +38,33 @@ app.get("/view_contacts", async (req, res) => {
 });
 
 //UPDATE
+app.put("/update_contact/:id", async (req, res) => {
+	try {
+		const { id } = req.params;
+		const { first_name, last_name, phone_number, email_address } = req.body;
+		const updateContact = await pool.query(
+			"UPDATE contacts SET (first_name, last_name, phone_number, email_address) = ($1, $2, $3, $4) WHERE contacts_id = ($5)",
+			[first_name, last_name, phone_number, email_address, id]
+		);
+		res.json(updateContact.rows);
+	} catch (err) {
+		console.log(err.message);
+	}
+});
 
 //DELETE
+app.delete("/delete_contact/:id", async (req, res) => {
+	try {
+		const { id } = req.params;
+		const removeContact = await pool.query(
+			"DELETE FROM contacts WHERE contacts_id = $1",
+			[id]
+		);
+		res.json(removeContact);
+	} catch (err) {
+		console.log(err.message);
+	}
+});
 
 app.listen(port, () => {
 	console.log(`Listening on ${port}`);
