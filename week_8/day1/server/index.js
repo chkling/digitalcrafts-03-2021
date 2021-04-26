@@ -11,6 +11,7 @@ app.get("/", (req, res) => {
 	res.send("Welcome to your contact list!");
 });
 
+//CREATE
 app.post("/add_contact", async (req, res) => {
 	try {
 		const { first_name, last_name, phone_number, email_address } = req.body;
@@ -23,6 +24,22 @@ app.post("/add_contact", async (req, res) => {
 		console.log(err.message);
 	}
 });
+
+//REVIEW
+app.get("/view_contacts", async (req, res) => {
+	try {
+		const view = await pool.query(
+			"SELECT * from contacts ORDER BY contacts_id"
+		);
+		res.json(view.rows);
+	} catch (err) {
+		console.log(err.message);
+	}
+});
+
+//UPDATE
+
+//DELETE
 
 app.listen(port, () => {
 	console.log(`Listening on ${port}`);
