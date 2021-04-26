@@ -11,10 +11,7 @@ app.set("view engine", "html");
 app.use(express.json());
 app.use(cors());
 
-// const fetchData = async () => {
-//     let response = await fetch(pool);
-//     let json = await response.json();
-// };
+
 
 app.get("/", (req, res) => {
 	res.send("Welcome to your TO DO list.");
@@ -26,16 +23,26 @@ app.get("/home", (req, res) => {
 
 app.get("/todolist", (req, res) => {
 	const { id } = req.params;
+    const grabData = await pool.query();
+    const json = grabData.json();
+    console.log(json)
 	const task = todolist2.find((task) => task.todolist2_id.toString() === id);
-	if (task) {
-		res.render("todolist", {
-			locals: {
-				task,
-			},
-		});
-	} else {
-		res.status(404).send(`no task with handle ${id}`);
-	}
+    
+    res.render("task", {
+        locals: {
+            todo: json,
+            todo: json
+        }
+    })
+	// if (task) {
+	// 	res.render("todolist", {
+	// 		locals: {
+	// 			task,
+	// 		},
+	// 	});
+	// } else {
+	// 	res.status(404).send(`no task with handle ${id}`);
+	// }
 	// res.render("todolist");
 });
 
