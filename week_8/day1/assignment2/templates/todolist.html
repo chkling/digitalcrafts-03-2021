@@ -8,12 +8,20 @@
 	</head>
 	<body>
 		<h1>Task</h1>
-		<p>Task</p>
-		<p>${todo.task}</p>
-		<p>Priority</p>
-		<p>${todo.priority}</p>
+		<dl>
+			${todos.map(todo => `
+			<p>Task</p>
+			<p>${todo.task}</p>
+			<p>Priority</p>
+			<p>${todo.priority}</p>
+			` ).join("")}
+		</dl>
+		<!-- <form>
+			Task: <input type="text" /> Priority: <input type="text" />
+			<button type="submit" onclick="(e) => sendTodo(e)">Submit</button>
+		</form> -->
 	</body>
-	<script>
+	<!-- <script>
 		const sendTodo = (e) => {
 
 		    const datatodb = await fetch("url",
@@ -22,8 +30,8 @@
 		        headers: {
 		            'Content-Type': 'application/json'
 		        },
-		        body:{}
+		        body: JSON.stringify()
 		    })
 		}
-	</script>
+	</script> -->
 </html>

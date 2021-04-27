@@ -11,8 +11,6 @@ app.set("view engine", "html");
 app.use(express.json());
 app.use(cors());
 
-
-
 app.get("/", (req, res) => {
 	res.send("Welcome to your TO DO list.");
 });
@@ -21,29 +19,14 @@ app.get("/home", (req, res) => {
 	res.render("home");
 });
 
-app.get("/todolist", (req, res) => {
-	const { id } = req.params;
-    const grabData = await pool.query();
-    const json = grabData.json();
-    console.log(json)
-	const task = todolist2.find((task) => task.todolist2_id.toString() === id);
-    
-    res.render("task", {
-        locals: {
-            todo: json,
-            todo: json
-        }
-    })
-	// if (task) {
-	// 	res.render("todolist", {
-	// 		locals: {
-	// 			task,
-	// 		},
-	// 	});
-	// } else {
-	// 	res.status(404).send(`no task with handle ${id}`);
-	// }
-	// res.render("todolist");
+app.get("/todolist", async (req, res) => {
+	const grabData = await pool.query("SELECT * FROM todo");
+
+	res.render("todolist", {
+		locals: {
+			todos: grabData.rows,
+		},
+	});
 });
 
 // CREATE
