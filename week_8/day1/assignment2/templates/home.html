@@ -1,12 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Document</title>
-	</head>
-	<body>
 		<!DOCTYPE html>
 		<html lang="en">
 			<head>
@@ -17,21 +8,41 @@
 			</head>
 			<body>
 				<h1>Welcome to Your To Do List</h1>
+				
+				<form method ="post">
+					Task: <input type="text" class="taskClass">
+					Priority: <input type="text" class="priorityClass">
+					<button type="submit" onclick="sendTodo()">Submit</button>
+				</form>
 				<a href="/todolist">Click here to visit your list</a>
 			</body>
 		</html>
-	</body>
-	<!-- <script>
-		const sendTodo = (e) => {
+	<script>
+	const sendTodo = async (e) => {
 
-		    const datatodb = await fetch("url",
-		    {
-		        method: 'POST', // *GET, POST, PUT, DELETE, etc.
-		        headers: {
-		            'Content-Type': 'application/json'
-		        },
-		        body:{}
-		    })
+		const task = document.querySelector(".taskClass").value
+        const priority = document.querySelector(".priorityClass").value
+
+        const combinedData = {
+            task:taskClass,
+            priority:priorityClass,
+        }
+        const sendTheData = await fetch("http://localhost:2021/todolist", 
+        {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body:  JSON.stringify(combinedData)
+        })
+		    // const datatodb = await fetch("url",
+		    // {
+		    //     method: 'POST', // *GET, POST, PUT, DELETE, etc.
+		    //     headers: {
+		    //         'Content-Type': 'application/json'
+		    //     },
+		    //     body:{}
+		    // })
 		}
-	</script> -->
+	</script>
 </html>

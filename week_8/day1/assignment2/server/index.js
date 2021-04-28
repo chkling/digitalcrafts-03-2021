@@ -12,10 +12,6 @@ app.use(express.json());
 app.use(cors());
 
 app.get("/", (req, res) => {
-	res.send("Welcome to your TO DO list.");
-});
-
-app.get("/home", (req, res) => {
 	res.render("home");
 });
 

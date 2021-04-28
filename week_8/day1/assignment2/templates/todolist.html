@@ -16,22 +16,16 @@
 			<p>${todo.priority}</p>
 			` ).join("")}
 		</dl>
-		<!-- <form>
-			Task: <input type="text" /> Priority: <input type="text" />
-			<button type="submit" onclick="(e) => sendTodo(e)">Submit</button>
-		</form> -->
 	</body>
-	<!-- <script>
-		const sendTodo = (e) => {
-
-		    const datatodb = await fetch("url",
-		    {
-		        method: 'POST', // *GET, POST, PUT, DELETE, etc.
-		        headers: {
-		            'Content-Type': 'application/json'
-		        },
-		        body: JSON.stringify()
-		    })
-		}
-	</script> -->
+	<script>
+		const sendTodo = async (e) => {
+			const datatodb = await fetch("url", {
+				method: "POST", // *GET, POST, PUT, DELETE, etc.
+				headers: {
+					"Content-Type": "application/json",
+				},
+				body: JSON.stringify(),
+			});
+		};
+	</script>
 </html>
