@@ -9,8 +9,8 @@ Using Node, Express, and Sequelize, your objective is to build a CRUD App for th
 Patient
 Doctor
 Appointments
-Associations
 
+Associations:
 A doctor can have many patients
 
 A patient can have many doctors
