@@ -22,7 +22,6 @@ app.get("/doctors", async (req, res) => {
 	res.render("doctors", {
 		locals: {
 			doctors: doctorsFromDB,
-			title: "Doctor",
 		},
 	});
 });
