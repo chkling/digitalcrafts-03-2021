@@ -6,6 +6,7 @@ export class Sidebar extends Component {
 		return (
 			<div className="sidebar">
 				<ul>
+					<a href="about.html">Resume</a>
 					<a href="about.html">LinkedIn</a>
 					<a href="about.html">Projects</a>
 					<a href="about.html">Github</a>
