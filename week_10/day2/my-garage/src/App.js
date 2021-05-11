@@ -13,6 +13,9 @@ export default class App extends Component {
 								{
 									name: "Harley Davidson",
 								},
+								{
+									name: "Another",
+								},
 							],
 						},
 						{
