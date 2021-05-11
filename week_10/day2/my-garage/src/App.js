@@ -1,25 +1,70 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import House from "./components/House";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+export default class App extends Component {
+	constructor(props) {
+		super(props);
+		this.state = {
+			vehicles: [
+				{
+					motorcycles: [
+						{
+							american: [
+								{
+									name: "Harley Davidson",
+								},
+							],
+						},
+						{
+							foreign: [
+								{
+									name: "Yamaha",
+								},
+							],
+						},
+					],
+					exotic: [
+						{
+							american: [
+								{
+									name: "Corvette",
+								},
+							],
+						},
+						{
+							foreign: [
+								{
+									name: "Lamborghini",
+								},
+							],
+						},
+					],
+					muscle: [
+						{
+							american: [
+								{
+									name: "Ford Mustang",
+								},
+							],
+						},
+						{
+							foreign: [
+								{
+									name: "Valiant Charger",
+								},
+							],
+						},
+					],
+				},
+			],
+		};
+	}
+	render() {
+		const { vehicles } = this.state;
+		return (
+			<div>
+				<House vehicles={vehicles} />
+			</div>
+		);
+	}
 }
-
-export default App;
