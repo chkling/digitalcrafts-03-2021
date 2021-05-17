@@ -9,6 +9,9 @@ function App() {
 		<div className="App">
 			<h1>App.js</h1>
 			<Class />
+			<Class2 />
+			<Class3 />
+			<Class4 />
 		</div>
 	);
 }
