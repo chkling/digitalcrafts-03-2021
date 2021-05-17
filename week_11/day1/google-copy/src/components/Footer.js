@@ -11,7 +11,7 @@ export default class Footer extends Component {
 					<a href="index.html"> How Search works</a>
 				</div>
 				<div className="footer2">
-					<img src={leaf}></img>
+					<img src={leaf} alt="leaf"></img>
 					<a href="index.html"> Carbon neutral since 2007</a>
 				</div>
 				<div className="footer3">
