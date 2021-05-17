@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import profile from "./profile.jpeg";
+import dots from "./dots.jpeg";
 
 export default class Navbar extends Component {
 	render() {
@@ -11,8 +13,8 @@ export default class Navbar extends Component {
 				<div className="nav2">
 					<a href="index.html"> Gmail</a>
 					<a href="index.html"> Images</a>
-					<a href="index.html"> Settings</a>
-					<a href="index.html"> Profile</a>
+					<img className="dots" src={dots} alt="dots"></img>
+					<img className="prof-pic" src={profile} alt="profile"></img>
 				</div>
 			</div>
 		);
