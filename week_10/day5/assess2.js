@@ -11,8 +11,18 @@ const obj = {
 	},
 };
 
-console.log(obj.person);
+// console.log(obj.person);
 
-const transformer = (object) => {
-	let newArray = [];
-};
+// const transformer = (object) => {
+// 	let newArray = [];
+// 	console.log(newArray.push(object));
+// };
+
+function objectToArray(object) {
+	let array = [];
+	for (let key in object) {
+		array.push(object[key]);
+	}
+	return array;
+}
+console.log(objectToArray(obj));
