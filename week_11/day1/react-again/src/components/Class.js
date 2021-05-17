@@ -20,9 +20,21 @@ export default class Class extends Component {
 	}
 	// setState, allows you to access the state object
 	render() {
+		console.log(this.props.getDate());
 		return (
-			<div>
+			<div
+				style={{
+					height: "300px",
+					width: "500px",
+					backgroundColor: "lightblue",
+					margin: "20px",
+				}}
+			>
 				<h1>Class.js</h1>
+				<h3>
+					Info from App.js:{" "}
+					{this.props.greeting ? this.props.greeting : "nothing yet"}
+				</h3>
 				<p>This is the count {this.state.count}</p>
 				<button
 					onClick={() =>
