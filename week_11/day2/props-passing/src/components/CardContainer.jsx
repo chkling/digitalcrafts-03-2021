@@ -21,7 +21,7 @@ export default class CardContainer extends Component {
 		console.log(filteredData);
 		return (
 			<div>
-				<h1>Card Container</h1>
+				<h1>Pokemon Card Container</h1>
 				<input
 					onChange={(e) => this.searchCriteria(e)}
 					type="text"

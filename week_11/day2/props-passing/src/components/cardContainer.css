@@ -4,11 +4,14 @@
 	place-content: space-around;
 	flex-wrap: wrap;
 }
-
 .pokemon-card {
-	margin: 2rem;
 	background-color: #e7f2f8;
-	height: 400px;
+	height: 370px;
 	width: 12rem;
 	margin: 1rem;
+}
+.pokemon-card button {
+	border-radius: 10px;
+	height: 40px;
+	width: 50%;
 }
