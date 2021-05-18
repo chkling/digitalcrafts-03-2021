@@ -2,10 +2,12 @@ import React, { Component } from "react";
 
 export default class Card extends Component {
 	render() {
-		return (
-			<div>
-				<h1>Card</h1>
-			</div>
-		);
+		const { hp, id, name } = this.props.pokemon;
+		return;
+		<div>
+			<p>{name}</p>
+			<p>{id}</p>
+			<p>{hp}</p>
+		</div>;
 	}
 }
