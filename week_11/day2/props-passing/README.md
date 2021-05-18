@@ -11,3 +11,4 @@
 # Extra hard
 
 - add the ability to send picture
+- find a way to show the pokemon sprites from the API

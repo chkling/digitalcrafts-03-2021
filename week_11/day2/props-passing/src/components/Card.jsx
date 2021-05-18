@@ -1,22 +1,26 @@
 import React, { Component } from "react";
 import "./cardContainer.css";
 
-export default class Card extends Component {
+class Card extends Component {
 	state = {
 		flip: false,
 	};
 	render() {
-		const { hp, id, name, sprites } = this.props.pokemon;
+		const { hp, name, sprites } = this.props.pokemon;
+		const uppercased = name.toUpperCase();
 		return (
 			<div className="pokemon-card">
-				<img src={this.state.flip ? sprites.back : sprites.front} alt="" />
-				<h2>{name}</h2>
-				<p>#{id}</p>
-				<p>HP : {hp}</p>
-				<button onClick={() => this.setState({ flip: !this.state.flip })}>
-					Flip
-				</button>{" "}
+				<img
+					onMouseLeave={() => this.setState({ flip: !this.state.flip })}
+					onMouseOver={() => this.setState({ flip: !this.state.flip })}
+					src={this.state.flip ? sprites.back : sprites.front}
+					alt=""
+				/>
+				<h2>{uppercased}</h2>
+				<p>HP: {hp}</p>
 			</div>
 		);
 	}
 }
+
+export default Card;
