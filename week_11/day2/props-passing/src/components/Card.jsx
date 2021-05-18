@@ -16,8 +16,8 @@ class Card extends Component {
 					src={this.state.flip ? sprites.back : sprites.front}
 					alt=""
 				/>
-				<h2>{uppercased}</h2>
-				<p>HP: {hp}</p>
+				<h3>{uppercased}</h3>
+				<p> 🧡 HP: {hp}</p>
 			</div>
 		);
 	}
