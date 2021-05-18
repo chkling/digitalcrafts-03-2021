@@ -25,7 +25,9 @@ class CardContainer extends Component {
 		});
 	}
 	// componentDidMount() {
-	// 	this.setState({});
+	// 	this.setState({
+	// 		pokemonList: this.props.pokemonData[0],
+	// 	});
 	// }
 
 	searchCriteria = (event) => {
