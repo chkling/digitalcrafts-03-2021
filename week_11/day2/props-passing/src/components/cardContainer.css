@@ -6,7 +6,7 @@
 }
 .pokemon-card {
 	background-color: #e7f2f8;
-	height: 370px;
+	height: 310px;
 	width: 12rem;
 	margin: 1rem;
 }
@@ -14,4 +14,9 @@
 	border-radius: 10px;
 	height: 40px;
 	width: 50%;
+}
+
+.card-input {
+	outline: none;
+	margin: 5px;
 }
