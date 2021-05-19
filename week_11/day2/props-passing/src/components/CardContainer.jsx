@@ -5,121 +5,110 @@ import "./cardContainer.css";
 class CardContainer extends Component {
 	state = {
 		searchCriteria: "",
+		pokemonList: [],
 		pokemonBerries: [],
 		pokemonName: "",
 		hp: "",
-		frontURL: "",
-		backURL: "",
+		frontUrl: "",
+		backUrl: "",
 	};
 
-	async componentDidMount() {
-		const berryUrl = "https://pokeapi.co/api/v2/berry/";
-		const fetchData = await fetch(berryUrl, {
-			headers: {
-				"Content-Type": "application/json",
-			},
-		});
-		const json = await fetchData.json();
+	componentDidMount() {
 		this.setState({
-			pokemonBerries: json.results,
+			pokemonList: this.props.pokemonData[0].pokemon,
 		});
 	}
-	// componentDidMount() {
-	// 	this.setState({
-	// 		pokemonList: this.props.pokemonData[0],
-	// 	});
-	// }
 
 	searchCriteria = (event) => {
 		const search = event.target.value.toLowerCase();
-
 		this.setState({
 			searchCriteria: search,
 		});
 	};
 
-	AddCard = (e) => {
+	sendPokemonToData = (e) => {
 		this.setState({
 			[e.target.name]: e.target.value,
-			[e.target.hp]: e.target.value,
-			[e.target.frontURL]: e.target.value,
-			[e.target.backURL]: e.target.value,
 		});
-		console.log(e);
+		e.preventDefault();
 	};
 
-	handleSubmit = (e) => {
-		this.AddCard(e);
-		e.preventDefault();
-		alert("This has been submitted");
+	onSubmit = (event, filteredData) => {
+		event.preventDefault();
+		const newPokemon = {
+			name: this.state.pokemonName,
+			hp: this.state.hp,
+			sprites: {
+				front: this.state.frontUrl,
+				back: this.state.backUrl,
+			},
+		};
+
+		const newPokemonList = [newPokemon, ...this.state.pokemonList];
+		this.setState({
+			pokemonList: newPokemonList,
+		});
 	};
 
 	render() {
-		const { pokemonData } = this.props;
-
-		const filteredData = pokemonData[0].pokemon.filter((pokemon) =>
+		const { pokemonList } = this.state;
+		const filteredData = pokemonList.filter((pokemon) =>
 			pokemon.name.includes(this.state.searchCriteria)
 		)
-			? pokemonData[0].pokemon.filter((pokemon) =>
+			? pokemonList.filter((pokemon) =>
 					pokemon.name.includes(this.state.searchCriteria)
 			  )
-			: pokemonData[0].pokemon;
+			: pokemonList;
 
 		return (
 			<div className="main-card-container">
 				<div>
 					<input
+						name="pokemonName"
 						className="search-field"
 						onChange={(e) => this.searchCriteria(e)}
 						type="text"
 						placeholder="Search for a pokemon"
 					/>
 				</div>
-				<form onSubmit={this.handleSubmit}>
-					<div>
+				{/* form */}
+				<div>
+					<form onSubmit={(e) => this.onSubmit(e, filteredData)}>
 						<input
 							name="pokemonName"
-							autoComplete="off"
 							className="create-field"
 							type="text"
 							placeholder="Enter a Name"
 							value={this.state.pokemonName}
-							onChange={(e) => this.AddCard(e)}
+							onChange={(e) => this.sendPokemonToData(e)}
 						/>
 						<input
 							name="hp"
-							autoComplete="off"
 							className="create-field"
 							type="text"
 							placeholder="Enter a HP"
 							value={this.state.hp}
-							onChange={(e) => this.AddCard(e)}
+							onChange={(e) => this.sendPokemonToData(e)}
 						/>
 						<input
-							name="frontURL"
-							autoComplete="off"
+							name="frontUrl"
 							className="create-field"
 							type="text"
 							placeholder="Enter front URL"
-							value={this.state.frontURL}
-							onChange={(e) => this.AddCard(e)}
+							value={this.state.frontUrl}
+							onChange={(e) => this.sendPokemonToData(e)}
 						/>
 						<input
-							name="backURL"
-							autoComplete="off"
+							name="backUrl"
 							className="create-field"
 							type="text"
 							placeholder="Enter back URL"
-							value={this.state.backURL}
-							onChange={(e) => this.AddCard(e)}
+							value={this.state.backUrl}
+							onChange={(e) => this.sendPokemonToData(e)}
 						/>
-						<input
-							type="submit"
-							className="create-button"
-							placeholder="Submit"
-						/>
-					</div>
-				</form>
+						<input className="create-field" type="submit" value="Submit" />
+					</form>
+				</div>
 				<div className="card-container">
 					{filteredData.map((singlePokemon, index) => (
 						<Card key={singlePokemon.name} pokemon={singlePokemon} />
