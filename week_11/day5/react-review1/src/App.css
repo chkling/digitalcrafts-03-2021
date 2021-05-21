@@ -1,0 +1,14 @@
+* {
+	text-align: center;
+	margin: 5px;
+	background-color: #f4f4f4;
+}
+
+input {
+	outline: none;
+}
+
+button {
+	cursor: pointer;
+	border-radius: 20px;
+}
