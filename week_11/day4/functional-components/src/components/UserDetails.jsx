@@ -1,10 +1,11 @@
 import React from "react";
 
-export default function UserDetails(props) {
+export default function UserDetails({ firstName }) {
+	console.log(firstName);
 	return (
 		<div>
 			<h1>User Detail</h1>
-			<p>{props.firstName}</p>
+			<p>{firstName.firstName}</p>
 		</div>
 	);
 }

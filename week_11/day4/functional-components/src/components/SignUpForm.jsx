@@ -3,15 +3,23 @@ import {
 	SignUpFormInput,
 	SignUpFormDiv,
 } from "./styledComponents/SignUpFormStyles";
+import React from "react";
 
-export default function SignUpForm(props) {
+export default function SignUpForm({ firstName, setFirstName, setNewUser }) {
+	const onSubmit = (e) => {
+		e.preventDefault();
+		setNewUser = {
+			firstName: firstName,
+		};
+	};
+
 	return (
 		<div>
 			<h1>Create Account</h1>
-			<SignUpFormDiv>
+			<SignUpFormDiv onSubmit={onSubmit}>
 				<SignUpFormInput
-					onChange={(e) => props.setFirstName(e.target.value)}
-					value={props.firstName}
+					onChange={(e) => setFirstName(e.target.value)}
+					value={firstName}
 					type="text"
 					placeholder="First Name"
 				/>
