@@ -5,12 +5,24 @@ import {
 } from "./styledComponents/SignUpFormStyles";
 import React from "react";
 
-export default function SignUpForm({ firstName, setFirstName, setNewUser }) {
+export default function SignUpForm({
+	firstName,
+	setFirstName,
+	lastName,
+	setLastName,
+	email,
+	setEmail,
+	newUser,
+	setNewUser,
+}) {
 	const onSubmit = (e) => {
 		e.preventDefault();
-		setNewUser = {
+		newUser = {
 			firstName: firstName,
+			lastName: lastName,
+			email: email,
 		};
+		setNewUser(newUser);
 	};
 
 	return (
@@ -23,8 +35,18 @@ export default function SignUpForm({ firstName, setFirstName, setNewUser }) {
 					type="text"
 					placeholder="First Name"
 				/>
-				<SignUpFormInput type="text" placeholder="Last Name" />
-				<SignUpFormInput type="email" placeholder="Email" />
+				<SignUpFormInput
+					onChange={(e) => setLastName(e.target.value)}
+					value={lastName}
+					type="text"
+					placeholder="Last Name"
+				/>
+				<SignUpFormInput
+					onChange={(e) => setEmail(e.target.value)}
+					value={email}
+					type="email"
+					placeholder="Email"
+				/>
 				<SignUpFormInput type="password" placeholder="Password" />
 				<SignUpFormInput type="password" placeholder="Re-Type Password" />
 				<SignUpButton>Sign Up</SignUpButton>
