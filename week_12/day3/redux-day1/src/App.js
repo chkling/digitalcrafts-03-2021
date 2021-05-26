@@ -1,11 +1,9 @@
 import "./App.css";
-import React, { useState } from "react";
+import React from "react";
 import Counter from "./components/Counter";
 import ComponentTwo from "./components/ComponentTwo";
 
 function App() {
-	const [counter, setCounter] = useState(0);
-
 	return (
 		<div className="App">
 			<Counter />
