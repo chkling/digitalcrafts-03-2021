@@ -7,11 +7,10 @@ export default function AddNames() {
 	return (
 		<div>
 			<h1>Add Names</h1>
-			<p>{contacts}</p>
-			<button onClick={() => dispatch({ type: "ADD_NAMES" })}>Add Names</button>
 			{contacts.map((contact) => (
 				<div>{contact.name}</div>
 			))}
+			<button onClick={() => dispatch({ type: "ADD_NAMES" })}>Add Names</button>
 		</div>
 	);
 }
