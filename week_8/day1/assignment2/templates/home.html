@@ -9,40 +9,13 @@
 			<body>
 				<h1>Welcome to Your To Do List</h1>
 				
-				<form method ="post">
-					Task: <input type="text" class="taskClass">
-					Priority: <input type="text" class="priorityClass">
+				<form action="/add" method ="POST">
+					<p>Task: <input type="text" class="taskClass"></p>
+					<p>Priority: <input type="text" class="priorityClass"></p>
 					<button type="submit" onclick="sendTodo()">Submit</button>
 				</form>
 				<a href="/todolist">Click here to visit your list</a>
 			</body>
 		</html>
-	<script>
-	const sendTodo = async (e) => {
 
-		const task = document.querySelector(".taskClass").value
-        const priority = document.querySelector(".priorityClass").value
-
-        const combinedData = {
-            task:taskClass,
-            priority:priorityClass,
-        }
-        const sendTheData = await fetch("http://localhost:2021/todolist", 
-        {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body:  JSON.stringify(combinedData)
-        })
-		    // const datatodb = await fetch("url",
-		    // {
-		    //     method: 'POST', // *GET, POST, PUT, DELETE, etc.
-		    //     headers: {
-		    //         'Content-Type': 'application/json'
-		    //     },
-		    //     body:{}
-		    // })
-		}
-	</script>
 </html>

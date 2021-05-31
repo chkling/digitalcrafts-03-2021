@@ -16,7 +16,7 @@ app.get("/", (req, res) => {
 });
 
 app.get("/todolist", async (req, res) => {
-	const grabData = await pool.query("SELECT * FROM todo");
+	const grabData = await pool.query("SELECT * FROM todo ORDER by todo_id");
 
 	res.render("todolist", {
 		locals: {
@@ -30,7 +30,7 @@ app.post("/add", async (req, res) => {
 	try {
 		const { task, priority } = req.body;
 		const addItem = await pool.query(
-			"INSERT INTO todo (task, priority) values ($1, $2)",
+			"INSERT INTO todo (task, priority) VALUES ($1, $2)",
 			[task, priority]
 		);
 		res.json(addItem);
@@ -40,13 +40,18 @@ app.post("/add", async (req, res) => {
 });
 
 // REVIEW
-app.get("/review", async (req, res) => {
-	try {
-		const reviewItems = await pool.query("SELECT * from todo ORDER BY todo_id");
-		res.json(reviewItems.rows);
-	} catch (err) {
-		console.log(err.message);
-	}
+app.get("/todolist/:id", async (req, res) => {
+	const { id } = req.params;
+	const grabSingleTodoData = await pool.query(
+		"SELECT * FROM todo WHERE by todo_id = ($1)",
+		[id]
+	);
+
+	res.render("todo", {
+		locals: {
+			todos: grabSingleTodoData.rows,
+		},
+	});
 });
 
 // UPDATE
@@ -65,7 +70,7 @@ app.put("/update/:id", async (req, res) => {
 });
 
 // DELETE
-app.delete("/delete/:id", async (req, res) => {
+app.get("/delete/:id", async (req, res) => {
 	try {
 		const { id } = req.params;
 		const removeItem = await pool.query(

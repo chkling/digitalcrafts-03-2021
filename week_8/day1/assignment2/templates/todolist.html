@@ -14,18 +14,32 @@
 			<p>${todo.task}</p>
 			<p>Priority</p>
 			<p>${todo.priority}</p>
+			<div class="button-container">
+				<a href="/update" method="PUT"
+				  ><button type="submit">Update</button></a
+				>
+				<form action="/delete" method="DELETE">
+				  <input type="hidden" name="todo_id" value="${todos.todo_id}" />
+				  <button type="submit">Delete</button></div>
+				</form>
+			  </div>
 			` ).join("")}
 		</dl>
 	</body>
 	<script>
 		const sendTodo = async (e) => {
-			const datatodb = await fetch("url", {
-				method: "POST", // *GET, POST, PUT, DELETE, etc.
+			const combinedData = {
+				task:taskClass,
+				priority:priorityClass,
+			}
+			const sendTheData = await fetch("http://localhost:3003/todolist", 
+			{
+				method: 'POST',
 				headers: {
-					"Content-Type": "application/json",
+					'Content-Type': 'application/json'
 				},
-				body: JSON.stringify(),
-			});
-		};
-	</script>
+				body:  JSON.stringify(combinedData)
+			})
+			}
+		</script>
 </html>
