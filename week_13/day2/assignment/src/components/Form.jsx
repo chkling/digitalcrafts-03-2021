@@ -1,36 +1,36 @@
 import React from "react";
-import { useDispatch, useSelector } from "react-redux";
 import { emailUpdate } from "../actions/email-actions";
 import { usernameUpdate } from "../actions/user-actions";
+import { useDispatch, useSelector } from "react-redux";
+import { addUser } from "../actions/newUser-actions";
 
-export default function Form(props) {
+export default function Form() {
 	const dispatch = useDispatch();
-	const username = useSelector((state) => state.username);
 	const email = useSelector((state) => state.email);
-
+	const username = useSelector((state) => state.username);
 	return (
 		<div>
 			<h1>Form</h1>
-			{username}
 			<form action="">
 				<input
 					onChange={(e) => {
-						e.preventDefault();
-						usernameUpdate(dispatch);
+						usernameUpdate(dispatch, e.target.value);
 					}}
-					// value={() => usernameUpdate(dispatch)}
 					type="text"
 					placeholder="Enter Username"
 				/>
-				{/* <input
+				<input
 					onChange={(e) => {
-						e.usernameUpdate(dispatch);
+						emailUpdate(dispatch, e.target.value);
 					}}
-					value={props.usernameUpdate(dispatch)}
 					type="text"
-					placeholder="Enter Password"
-				/> */}
-				<button onClick={() => usernameUpdate(dispatch)}>Submit</button>
+					placeholder="Enter Email Address"
+				/>
+				<button
+					onClick={(e) => e.preventDefault(addUser(dispatch, username, email))}
+				>
+					Submit
+				</button>
 			</form>
 		</div>
 	);

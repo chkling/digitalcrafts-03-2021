@@ -1,14 +1,14 @@
-import { ADD_USER } from "../action-types/email-action-types";
+import { ADD_USER } from "../action-types/userDetails-action-types";
 
-const initialState = {};
+const initialState = "";
 
-const email = (state = initialState, action) => {
+const userDetails = (state = initialState, action) => {
 	switch (action.type) {
 		case ADD_USER:
-			return (state = state.target.value);
+			return (state = action.payload);
 		default:
 			return state;
 	}
 };
 
-export default email;
+export default userDetails;
